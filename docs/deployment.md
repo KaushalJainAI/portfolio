@@ -8,7 +8,25 @@ This guide provides step-by-step instructions for deploying your Vite + React po
 
 ---
 
-## Method 1: Git Integration (Recommended)
+## Handling Assets (Images & Large Files)
+
+Since you mentioned that some images and assets are **not uploaded to GitHub**, you have two primary options to ensure they appear on your live website:
+
+### Option A: Direct Local Deployment (Recommended for local assets)
+If you have images on your local machine that you **don't** want to push to GitHub, use **Method 2 (Direct Upload)** below. 
+1. When you run `npm run build`, Vite will bundle your local images into the `dist/` folder.
+2. Using the Wrangler CLI, you upload that `dist/` folder directly from your computer to Cloudflare.
+3. **Outcome:** Your website will have the images, but your GitHub repository will stay clean of large files.
+
+### Option B: External Hosting (CDN)
+Upload your images to a service like **Cloudinary**, **Imgix**, or **AWS S3**.
+1. After uploading, copy the direct image URL (e.g., `https://res.cloudinary.com/.../photo.jpg`).
+2. In your code, replace local paths like `./assets/photo.jpg` with the new URL.
+3. **Outcome:** This works perfectly with **Method 1 (Git Integration)** because GitHub only stores the URL (text), not the heavy image file.
+
+---
+
+## Method 1: Git Integration
 This method enables automatic deployments whenever you push changes to your repository.
 
 ### 1. Connect Your Repository
@@ -32,7 +50,7 @@ Click **Save and Deploy**. Cloudflare will start the build process. Once finishe
 ---
 
 ## Method 2: Direct Upload (Using Wrangler CLI)
-Use this if you prefer manual deployments from your local machine.
+**Use this if you have images/assets locally that are NOT on GitHub.** This method uploads your project directly from your computer, including all local files.
 
 ### 1. Install Wrangler
 ```bash
