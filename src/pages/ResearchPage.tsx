@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { assetLinks } from '../assets/assetLinks';
 
 const ResearchPage: React.FC = () => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const ResearchPage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src="/research_visual.png" alt="A detailed 3D collage of machine learning research: neural network architectures, heatmaps, fMRI voxels, and ensemble models over a sophisticated glassmorphism background." className="feature-media" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="A detailed 3D collage of machine learning research: neural network architectures, heatmaps, fMRI voxels, and ensemble models over a sophisticated glassmorphism background." className="feature-media" />
         </div>
       </section>
 
@@ -31,7 +32,7 @@ const ResearchPage: React.FC = () => {
           <p className="story-text">That is the kind of work I enjoy most, where experimentation, modeling, and interpretation all matter at once.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/leetcode-photo.jpg" alt="Analytical dashboard view showing activity and problem solving metrics." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.leetcode} alt="Analytical dashboard view showing activity and problem solving metrics." className="feature-media feature-media-fit" />
         </div>
       </section>
 
@@ -92,7 +93,7 @@ const ResearchPage: React.FC = () => {
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src="/Screenshot 2026-04-03 230706.png" alt="Dark research interface with query flow and response output." className="feature-media feature-media-fit" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="Dark research interface with query flow and response output." className="feature-media feature-media-fit" />
         </div>
         <div className="story-copy">
           <p className="mini">How it shows up in my work</p>

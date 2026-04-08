@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, FileText } from 'lucide-react';
+import { assetLinks } from '../assets/assetLinks';
 
 const Typer: React.FC = () => {
   const words = [
@@ -64,7 +65,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src="/profile.jpg" alt="Portrait of Kaushal Jain" className="feature-media" />
+          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" />
         </div>
       </section>
 
@@ -126,7 +127,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/collaboration_modern_3d.png" alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media feature-media-fit" />
+          <img src={assetLinks.profile.teamCollab} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media feature-media-fit" />
         </div>
       </section>
 

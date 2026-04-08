@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { assetLinks } from '../assets/assetLinks';
 
 const PersonalPage: React.FC = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const PersonalPage: React.FC = () => {
           <p className="lead">This page is a little different. It's not about projects or skills — it's about the things that shaped who I am before I ever wrote a line of code. Family, roots, and the quieter parts of my story.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src="/profile.jpg" alt="Kaushal Jain" className="feature-media" />
+          <img src={assetLinks.profile.avatar} alt="Kaushal Jain" className="feature-media" />
         </div>
       </section>
 
@@ -51,13 +52,13 @@ const PersonalPage: React.FC = () => {
           <p className="story-text">I think the best engineers are also interesting people. I try to be someone who listens well, stays curious about the world, and brings warmth to whatever team or space I'm part of.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/battle-of-bands.jpg" alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.battleOfBands} alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src="/pec-campus.jpg" alt="Punjab Engineering College campus." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.pecCampus} alt="Punjab Engineering College campus." className="feature-media feature-media-fit" />
         </div>
         <div className="story-copy">
           <p className="mini">College life</p>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { assetLinks } from '../assets/assetLinks';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -29,9 +30,9 @@ const AboutPage: React.FC = () => {
   };
 
   const musicImages = [
-    '/piano-photo.jpg',
-    '/personal_workspace_chess.png',
-    '/Playing melodies outdoors in harmony.png'
+    assetLinks.personal.piano,
+    assetLinks.personal.chess,
+    assetLinks.personal.battleOfBands
   ];
 
   return (
@@ -47,7 +48,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src="/profile.jpg" alt="Portrait of Kaushal Jain" className="feature-media" />
+          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" />
         </div>
       </section>
 
@@ -120,7 +121,7 @@ const AboutPage: React.FC = () => {
       {/* ── 1. Projects ── */}
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src="/workspace_pro.png" alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" />
+          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" />
         </div>
         <div className="story-copy">
           <p className="mini">Projects</p>
@@ -153,14 +154,14 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/tech_stack_collage.png" alt="A professional 3D composition of tech logos (Python, Django, React, Docker, etc.) floating over a modern glassmorphism background." className="feature-media feature-media-fit" />
+          <img src={assetLinks.skills.techStack} alt="A professional 3D composition of tech logos (Python, Django, React, Docker, etc.) floating over a modern glassmorphism background." className="feature-media feature-media-fit" />
         </div>
       </section>
 
       {/* ── 3. Research ── */}
       <section className="story-block story-block-reverse section" style={{ gridTemplateColumns: 'minmax(16rem, 0.7fr) minmax(0, 1.3fr)' }}>
         <div className="story-visual media-frame media-story">
-          <img src="/research_visual.png" alt="A detailed 3D collage of machine learning research elements: neural networks, heatmaps for feature importance, fMRI voxels, and ensemble outputs over a modern translucent background." className="feature-media" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="A detailed 3D collage of machine learning research elements: neural networks, heatmaps for feature importance, fMRI voxels, and ensemble outputs over a modern translucent background." className="feature-media" />
         </div>
         <div className="story-copy">
           <p className="mini">Research Interests</p>
@@ -188,13 +189,13 @@ const AboutPage: React.FC = () => {
           <p className="story-text">That is usually the space I work best in: technical enough to enjoy the complexity, but practical enough to keep the end user in view.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/personal_workspace_chess.png" alt="A personal workspace with a laptop, chess board, and piano, reflecting a balance between technical and creative work." className="feature-media" />
+          <img src={assetLinks.personal.chess} alt="A personal workspace with a laptop, chess board, and piano, reflecting a balance between technical and creative work." className="feature-media" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse story-block-visual-sm section">
         <div className="story-visual media-frame media-story">
-          <img src="/Playing melodies outdoors in harmony.png" alt="Kaushal Jain playing melodies outdoors" className="feature-media" />
+          <img src={assetLinks.personal.piano} alt="Kaushal Jain playing melodies outdoors" className="feature-media" />
         </div>
         <div className="story-copy">
           <p className="mini">Hobbies</p>
@@ -250,6 +251,9 @@ const AboutPage: React.FC = () => {
             <div className="line-side">
               <span className="chip c1">LeetCode</span>
               <span className="chip c2">500+ Solved</span>
+              <div className="testimony-avatar" style={{ marginLeft: '1rem' }} onClick={() => openLightbox([assetLinks.personal.leetcode], 0)}>
+                <img src={assetLinks.personal.leetcode} alt="LeetCode Progress" className="avatar-img" />
+              </div>
             </div>
           </article>
         </div>
@@ -267,7 +271,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/team_collaboration.png" alt="Engineering professionals collaborating in a modern office." className="feature-media" />
+          <img src={assetLinks.profile.teamCollab} alt="Engineering professionals collaborating in a modern office." className="feature-media" />
         </div>
       </section>
       {/* ── Lightbox ── */}

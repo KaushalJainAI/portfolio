@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
+import { assetLinks } from '../assets/assetLinks';
 
 const ProjectsPage: React.FC = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const ProjectsPage: React.FC = () => {
           <p className="lead">These are the projects I usually point people to first. They show the kind of problems I like solving and the way I tend to approach them.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src="/workspace_pro.png" alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" />
+          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" />
         </div>
       </section>
 
@@ -117,35 +118,35 @@ const ProjectsPage: React.FC = () => {
         <div className="project-collage">
           <figure className="project-tile project-tile-wide">
             <div className="media-frame project-photo">
-              <img src="/Screenshot 2026-04-03 225131.png" alt="NGU Spices homepage showing hero section, navigation, and featured spice products." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.nguSpices} alt="NGU Spices homepage showing hero section, navigation, and featured spice products." className="feature-media feature-media-fit" />
             </div>
             <figcaption><span>NGU Spices</span> Storefront experience</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src="/Screenshot 2026-04-03 230723.png" alt="Workflow dashboard showing multiple draft workflows in a dark interface." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.multiAgentSystem} alt="Workflow dashboard showing multiple draft workflows in a dark interface." className="feature-media feature-media-fit" />
             </div>
             <figcaption><span>Multi-Agent System</span> Workflow dashboard</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src="/battery_rul_visual.png" alt="A professional battery health and predictive maintenance visualization dashboard showing RUL metrics." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.nasaBatteryRul} alt="A professional battery health and predictive maintenance visualization dashboard showing RUL metrics." className="feature-media feature-media-fit" />
             </div>
             <figcaption><span>NASA Battery RUL</span> Predictive maintenance analysis</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src="/project_demo_recording_1775237444286.webp" alt="Authentication screen demo with email and password fields and a sign in action." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.firmwareSecurity} alt="Authentication screen demo with email and password fields and a sign in action." className="feature-media feature-media-fit" />
             </div>
             <figcaption><span>Firmware Security Platform</span> Secure sign-in screen</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src="/Screenshot 2026-04-03 230706.png" alt="Dark interface showing online workspace and research query flow." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.aiResearchFlow} alt="Dark interface showing online workspace and research query flow." className="feature-media feature-media-fit" />
             </div>
             <figcaption><span>AI Research Flow</span> Conversational interface</figcaption>
           </figure>
