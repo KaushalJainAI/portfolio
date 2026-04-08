@@ -6,9 +6,10 @@ This project was built with a modern web development stack designed for high-per
 
 ## Core Technologies
 - **Framework**: [React](https://reactjs.org/) (Version 18.x)
-- **Build Tool**: [Vite](https://vitejs.dev/) (Version 5.x)
+- **Build Tool**: [Vite](https://vitejs.dev/) (Version 6.x)
 - **Language**: [TypeScript](https://www.typescriptlang.org/) for type safety and scalability.
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) (Version 3.4) with custom configurations for a premium "tech" aesthetic.
+- **Asset Management**: Centralized cloud hosting via Google Drive, managed through `src/assets/assetLinks.ts`.
 
 ---
 

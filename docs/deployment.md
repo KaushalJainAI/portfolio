@@ -18,11 +18,12 @@ If you have images on your local machine that you **don't** want to push to GitH
 2. Using the Wrangler CLI, you upload that `dist/` folder directly from your computer to Cloudflare.
 3. **Outcome:** Your website will have the images, but your GitHub repository will stay clean of large files.
 
-### Option B: External Hosting (CDN)
-Upload your images to a service like **Cloudinary**, **Imgix**, or **AWS S3**.
-1. After uploading, copy the direct image URL (e.g., `https://res.cloudinary.com/.../photo.jpg`).
-2. In your code, replace local paths like `./assets/photo.jpg` with the new URL.
-3. **Outcome:** This works perfectly with **Method 1 (Git Integration)** because GitHub only stores the URL (text), not the heavy image file.
+### Option B: Cloud Hosting (Google Drive Integration) - Current Implementation
+The project is currently configured to use Google Drive for visual assets to keep the repository lightweight.
+1. Assets are uploaded to a public Google Drive folder.
+2. Direct download links are mapped in `src/assets/assetLinks.ts`.
+3. UI components import the `assetLinks` object to render images.
+4. **Outcome:** A lightweight repository with fast, CD-hosted assets.
 
 ---
 
@@ -92,3 +93,12 @@ To use your own domain:
 1. Go to your Pages project in the dashboard.
 2. Select **Custom domains** > **Set up a custom domain**.
 3. Follow the prompts to configure your DNS.
+
+---
+
+## Troubleshooting
+
+### Vite 6 vs Vite 5 Mismatch
+If you encounter a deployment error stating that Vite 6 is required (often seen when using the latest Cloudflare Wrangler), ensure your project is using Vite 6.
+- The project has been upgraded to **Vite 6** to maintain compatibility with the latest Cloudflare Pages build environment.
+- If you downgrade Vite, you may need to specify a matching `node` and `npm` version in your Cloudflare build settings.

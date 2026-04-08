@@ -37,5 +37,8 @@ The server will usually be available at `http://localhost:5173/`.
 
 ---
 
-## Environment Variables
-Currently, the project uses hardcoded values but is designed to easily migrate to environment variables for sensitive data. Look at the configuration files in `src/functions/` for potential customization.
+## Customization
+Currently, the project uses a centralized mapping for all image assets in `src/assets/assetLinks.ts`. To use your own images:
+1. Upload your images to Google Drive or another CDN.
+2. Update the URLs in `src/assets/assetLinks.ts` with the new direct download links.
+3. For other logic or data, check the `src/functions/` directory for potential customization.

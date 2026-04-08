@@ -14,7 +14,7 @@ Portfolio/
 ├── node_modules/     # Project dependencies
 ├── public/           # Static assets (favicons, PDFs, _redirects)
 ├── src/              # Source code directory
-│   ├── assets/       # Locally generated images & icons
+│   ├── assets/       # [UPDATED] Local icons & assetLinks.ts for cloud assets
 │   ├── components/   # Reusable UI parts (Shadcn-style)
 │   ├── context/      # React context providers
 │   ├── functions/    # Utility functions & data formatting
@@ -50,3 +50,6 @@ A single CSS file that manages:
 2.  Google Fonts Imports
 3.  Globally applied animations (like the techy fade-ins)
 - **Special Care**: Ensure Google Font imports remain at the top of this file to prevent build issues with Vite.
+
+### `src/assets/assetLinks.ts`
+The central registry for all project images. It maps descriptive keys to direct download URLs (currently hosted on Google Drive). This allows for swapping visuals project-wide without editing multiple TSX files.
