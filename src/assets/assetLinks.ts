@@ -13,6 +13,7 @@ export const assetLinks = {
     heroWorkspace: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057360/portfolio/workspace_pro.jpg",
     avatar: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057328/portfolio/profile.jpg",
     teamCollab: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057356/portfolio/team_collaboration.jpg",
+    contactHero: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057272/portfolio/collaboration_modern_3d.jpg",
   },
 
   // Skills & Tech
@@ -28,5 +29,8 @@ export const assetLinks = {
     pecCampus: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057317/portfolio/pec_campus.jpg",
     leetcode: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057304/portfolio/leetcode_photo.png",
     battleOfBands: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057267/portfolio/battle_of_bands.jpg",
+    indiaLandscape: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057295/portfolio/india_landscape.jpg",
+    indianFood: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057293/portfolio/indian_food_aesthetic.jpg",
+    warmConversation: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057358/portfolio/warm_conversation_cafe.jpg",
   }
 };

@@ -28,13 +28,13 @@ const PersonalPage: React.FC = () => {
           <p className="story-text">Growing up, there was always an emphasis on doing things properly, being honest about what you know and don't know, and treating people with respect. Those values didn't come from a textbook — they came from home.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/india_landscape.png" alt="A warm, atmospheric Indian landscape at sunset." className="feature-media" />
+          <img src={assetLinks.personal.indiaLandscape} alt="A warm, atmospheric Indian landscape at sunset." className="feature-media" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src="/indian_food_aesthetic.png" alt="Aesthetic, high-end presentation of traditional Indian home-cooked food." className="feature-media" />
+          <img src={assetLinks.personal.indianFood} alt="Aesthetic, high-end presentation of traditional Indian home-cooked food." className="feature-media" />
         </div>
         <div className="story-copy">
           <p className="mini">Family</p>
@@ -109,7 +109,7 @@ const PersonalPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src="/warm_conversation_cafe.png" alt="A warm and genuine conversation in a modern cafe setting." className="feature-media" />
+          <img src={assetLinks.personal.warmConversation} alt="A warm and genuine conversation in a modern cafe setting." className="feature-media" />
         </div>
       </section>
     </main>

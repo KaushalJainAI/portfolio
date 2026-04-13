@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText } from 'lucide-react';
+import { assetLinks } from '../assets/assetLinks';
 
 const ContactPage: React.FC = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const ContactPage: React.FC = () => {
           <p className="lead">If you are looking for an engineer who mixes technical depth in ML and backend systems with a product-first mindset, let's talk.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src="/collaboration_modern_3d.png" alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media" />
+          <img src={assetLinks.profile.contactHero} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media" />
         </div>
       </section>
 
