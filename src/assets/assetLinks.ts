@@ -1,52 +1,32 @@
-/**
- * Google Drive Asset Links
- * 
- * IMPORTANT: To use Google Drive images in <img> tags, they must be converted 
- * to a direct view link format.
- * 
- * Standard Share Link: https://drive.google.com/file/d/FILE_ID/view?usp=sharing
- * Direct View Link:    https://drive.google.com/uc?export=view&id=FILE_ID
- */
-
-export const getDriveDirectLink = (fileId: string): string => {
-  if (!fileId) return '';
-  // If it's already a full URL, return it
-  if (fileId.startsWith('http')) return fileId;
-  return `https://drive.google.com/uc?export=view&id=${fileId}`;
-};
-
 export const assetLinks = {
-  // The main folder link for reference
-  sharedFolder: "https://drive.google.com/drive/folders/1HAG09Y7vWhGlFzf5fnKYG_dJSgfSBZY0?usp=sharing",
-  
   // Project Visuals
   projects: {
-    nguSpices: getDriveDirectLink("1DVlGiaEeXo8HuafyRVNQCPw-VN-8tcKf"),
-    multiAgentSystem: getDriveDirectLink("11sOjp--w4TAgLdcQkRXjO4EXDK9BgpcI"),
-    nasaBatteryRul: getDriveDirectLink("13-WwVHpJHCkFDOXFqVSRVrR0YOGRpTlZ"),
-    firmwareSecurity: getDriveDirectLink("1NN69azRWVABoa6IhPjoJERqPcG6wJ8jj"),
-    aiResearchFlow: getDriveDirectLink("11sOjp--w4TAgLdcQkRXjO4EXDK9BgpcI"), // Reusing similar visual
+    nguSpices: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057314/portfolio/nidhi_grah_udyog_order_demo_1775239341471.webp",
+    multiAgentSystem: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057337/portfolio/project_demo_recording_1775237444286.webp", 
+    nasaBatteryRul: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057265/portfolio/battery_rul_visual.jpg",
+    firmwareSecurity: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057269/portfolio/coding_close_up.jpg",
+    aiResearchFlow: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057340/portfolio/research_visual.jpg",
   },
 
   // General Assets
   profile: {
-    heroWorkspace: getDriveDirectLink("1j38mEB1CtbJcTg-njIK53NTapFco5Z8X"),
-    avatar: getDriveDirectLink("1C8V17YuGUtbNli05gbC_DKFgrFejRE52"),
-    teamCollab: getDriveDirectLink("1HmTRlOAMj9P9afH-cT2v57pKO7Px6cIf"),
+    heroWorkspace: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057360/portfolio/workspace_pro.jpg",
+    avatar: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057328/portfolio/profile.jpg",
+    teamCollab: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057356/portfolio/team_collaboration.jpg",
   },
 
   // Skills & Tech
   skills: {
-    heroCollage: getDriveDirectLink("1SjWhzC0VqbbkiEwbqVSaVTzGxg3Xk0zs"),
-    techStack: getDriveDirectLink("1z6QdXG1EBLrmNcZewChXZmhlz5UryDUH"),
+    heroCollage: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057354/portfolio/skills_hero_collage.jpg",
+    techStack: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057357/portfolio/tech_stack_collage.jpg",
   },
 
   // Personal & Hobbies
   personal: {
-    piano: getDriveDirectLink("1gWXUhcL4F8WcmcyuuVgOGXFlYTidQR7F"),
-    chess: getDriveDirectLink("1j38mEB1CtbJcTg-njIK53NTapFco5Z8X"), // Reusing workspace/hobby visual
-    pecCampus: getDriveDirectLink("1JtVfq4b68U9IgHbNdI44WFKvWiRkXYJf"),
-    leetcode: getDriveDirectLink("1sCS-XT79vRflFPpfwJk7WWr7WKoBTqwv"),
-    battleOfBands: getDriveDirectLink("11mGGR4BUa4uR-l5p_GWWyKS4E0PRAxhz"),
+    piano: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057327/portfolio/playing_melodies_outdoors_in_harmony.png",
+    chess: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057320/portfolio/personal_workspace_chess.jpg",
+    pecCampus: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057317/portfolio/pec_campus.jpg",
+    leetcode: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057304/portfolio/leetcode_photo.png",
+    battleOfBands: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057267/portfolio/battle_of_bands.jpg",
   }
 };
