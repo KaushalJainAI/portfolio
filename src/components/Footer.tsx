@@ -6,9 +6,9 @@ const Footer: React.FC = () => {
       <div className="container footer-wrap">
         <div>
           <p className="footer-title">Kaushal Jain</p>
-          <p>AI Engineer and Full-Stack Developer based in Chandigarh.</p>
+          <p>Backend &amp; ML engineer, based in Chandigarh.</p>
         </div>
-        <p>Built to feel calm, readable, and clear.</p>
+        <p>© {new Date().getFullYear()} Kaushal Jain</p>
       </div>
     </footer>
   );

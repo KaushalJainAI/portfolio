@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ROUTES, RESUME_URL, RESUME_DOWNLOAD_NAME } from '../site';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,21 +20,17 @@ const Navbar: React.FC = () => {
     closeMenu();
   }, [location]);
 
-  const isActive = (path: string) => {
-    if (path === '/' || path === '/portfolio.html') {
-      return location.pathname === '/' || location.pathname === '/portfolio.html' ? 'active' : '';
-    }
-    return location.pathname === path ? 'active' : '';
-  };
+  const isActive = (path: string) =>
+    location.pathname === path ? 'active' : '';
 
   return (
     <nav className="top-nav">
       <div className="container nav-wrap">
-        <Link to="/" className="logo" aria-label="Kaushal Jain home">KJ</Link>
-        <button 
-          className="nav-toggle" 
-          type="button" 
-          aria-expanded={isOpen} 
+        <Link to={ROUTES.home} className="logo" aria-label="Kaushal Jain home">KJ</Link>
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-expanded={isOpen}
           aria-controls="site-nav"
           onClick={toggleMenu}
         >
@@ -41,13 +38,13 @@ const Navbar: React.FC = () => {
           Menu
         </button>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="site-nav">
-          <li><Link className={isActive('/')} to="/">Home</Link></li>
-          <li><Link className={isActive('/about.html')} to="/about.html">About</Link></li>
-          <li><Link className={isActive('/skills.html')} to="/skills.html">Skills</Link></li>
-          <li><Link className={isActive('/research.html')} to="/research.html">Research</Link></li>
-          <li><Link className={isActive('/projects.html')} to="/projects.html">Projects</Link></li>
-          <li><a href="/resume jan 12.pdf" download="Kaushal_Jain_Resume.pdf" className="nav-resume">Resume</a></li>
-          <li><Link className={isActive('/contact.html')} to="/contact.html">Contact</Link></li>
+          <li><Link className={isActive(ROUTES.home)} to={ROUTES.home}>Home</Link></li>
+          <li><Link className={isActive(ROUTES.about)} to={ROUTES.about}>About</Link></li>
+          <li><Link className={isActive(ROUTES.skills)} to={ROUTES.skills}>Skills</Link></li>
+          <li><Link className={isActive(ROUTES.research)} to={ROUTES.research}>Research</Link></li>
+          <li><Link className={isActive(ROUTES.projects)} to={ROUTES.projects}>Projects</Link></li>
+          <li><a href={RESUME_URL} download={RESUME_DOWNLOAD_NAME} className="nav-resume">Resume</a></li>
+          <li><Link className={isActive(ROUTES.contact)} to={ROUTES.contact}>Contact</Link></li>
         </ul>
       </div>
     </nav>

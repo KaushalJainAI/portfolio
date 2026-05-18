@@ -1,20 +1,22 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { FileText } from 'lucide-react';
 import { assetLinks } from '../assets/assetLinks';
+import { RESUME_URL, RESUME_DOWNLOAD_NAME } from '../site';
+import { usePageMeta } from '../usePageMeta';
 
 const ContactPage: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  usePageMeta(
+    'Contact',
+    'Get in touch with Kaushal Jain — open to AI, data science, and systems engineering roles, internships, and technical collaborations.'
+  );
 
   return (
     <main className="container page">
       <section className="hero hero-inline">
         <div className="hero-copy">
-          <p className="kicker">Let's talk</p>
-          <h1>Open to <span className="accent-band">AI, Data Science, and Systems Engineering</span> work.</h1>
-          <p className="lead">If you are looking for an engineer who mixes technical depth in ML and backend systems with a product-first mindset, let's talk.</p>
+          <p className="kicker">Contact</p>
+          <h1>Open to <span className="accent-band">backend, ML, and full-stack</span> roles.</h1>
+          <p className="lead">If you're hiring or have a project in mind, email is the fastest way to reach me. Details below.</p>
         </div>
         <div className="media-frame media-tall">
           <img src={assetLinks.profile.contactHero} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media" />
@@ -32,8 +34,8 @@ const ContactPage: React.FC = () => {
               <p className="mini">Email</p>
             </div>
             <div className="line-body">
-              <h3>The best place to start.</h3>
-              <p>Use email for role discussions, project ideas, or anything that needs a bit of context.</p>
+              <h3>Best for anything substantial.</h3>
+              <p>Roles, project ideas, or anything that needs context — I check it regularly.</p>
             </div>
             <div className="line-action">
               <a className="btn primary" href="mailto:kaushaljain7000@gmail.com">kaushaljain7000@gmail.com</a>
@@ -44,8 +46,8 @@ const ContactPage: React.FC = () => {
               <p className="mini">LinkedIn</p>
             </div>
             <div className="line-body">
-              <h3>Good for networking and quick introductions.</h3>
-              <p>If you want to connect professionally or follow updates, LinkedIn works well too.</p>
+              <h3>Fine for a quick intro.</h3>
+              <p>Good if you'd rather connect there or follow what I'm working on.</p>
             </div>
             <div className="line-action">
               <a className="btn" href="https://www.linkedin.com/in/kaushal-jain-72a886259/" target="_blank" rel="noreferrer">Visit LinkedIn</a>
@@ -56,8 +58,8 @@ const ContactPage: React.FC = () => {
               <p className="mini">Phone</p>
             </div>
             <div className="line-body">
-              <h3>Useful when something needs quick coordination.</h3>
-              <p>Happy to use a call for scheduling, interviews, or fast-moving collaboration.</p>
+              <h3>For scheduling and interviews.</h3>
+              <p>Happy to take a call for interviews or anything time-sensitive.</p>
             </div>
             <div className="line-action">
               <a className="btn" href="tel:+917000742122">+91 7000742122</a>
@@ -68,8 +70,8 @@ const ContactPage: React.FC = () => {
               <p className="mini">GitHub</p>
             </div>
             <div className="line-body">
-              <h3>Best for code, recent work, and technical context.</h3>
-              <p>If you want to see projects, experiments, and how I structure my work in code, GitHub is the right place.</p>
+              <h3>For the actual code.</h3>
+              <p>Projects, experiments, and how I structure things — it's the most current view of my work.</p>
             </div>
             <div className="line-action">
               <a className="btn" href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer">Visit GitHub</a>
@@ -80,11 +82,11 @@ const ContactPage: React.FC = () => {
               <p className="mini">Resume</p>
             </div>
             <div className="line-body">
-              <h3>Download the technical overview.</h3>
-              <p>For a quick summary of my experience, education, and skills in a portable format.</p>
+              <h3>Download (PDF).</h3>
+              <p>One page: experience, education, and skills. Updated April 2026.</p>
             </div>
             <div className="line-action">
-              <a href="/resume jan 12.pdf" download="Kaushal_Jain_Resume.pdf" className="btn secondary">
+              <a href={RESUME_URL} download={RESUME_DOWNLOAD_NAME} className="btn secondary">
                 <FileText size={18} style={{ marginRight: '0.4rem' }} />
                 Download CV
               </a>

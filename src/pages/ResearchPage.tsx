@@ -1,22 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { assetLinks } from '../assets/assetLinks';
+import { ROUTES } from '../site';
+import { usePageMeta } from '../usePageMeta';
 
 const ResearchPage: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  usePageMeta(
+    'Research',
+    'Applied research by Kaushal Jain across medical AI, computer vision, voice, and ancient manuscript restoration.'
+  );
 
   return (
     <main className="container page">
       <section className="hero hero-inline">
         <div className="hero-copy">
-          <p className="kicker">Research interests and exploration</p>
-          <h1>I tackle <span className="accent-band">complex discovery problems</span> across medical AI and computer vision.</h1>
-          <p className="lead">My research background spans from the digital restoration of ancient manuscripts to high-frequency medical sensors and predictive maintenance. I am drawn to the challenge of extracting signal from complex, noisy data and building the systems that make those insights useful.</p>
+          <p className="kicker">Research</p>
+          <h1>Applied ML work in <span className="accent-band">medical AI and computer vision</span>.</h1>
+          <p className="lead">A few research-style projects, from manuscript scans to medical signals to battery health. The recurring interest is getting a usable result out of noisy, high-dimensional data.</p>
           <div className="actions">
-            <Link className="btn primary" to="/projects.html">See Related Projects</Link>
-            <Link className="btn" to="/skills.html">View Skills</Link>
+            <Link className="btn primary" to={ROUTES.projects}>See Related Projects</Link>
+            <Link className="btn" to={ROUTES.skills}>View Skills</Link>
           </div>
         </div>
         <div className="media-frame media-tall">
@@ -26,10 +29,10 @@ const ResearchPage: React.FC = () => {
 
       <section className="story-block section">
         <div className="story-copy">
-          <p className="mini">What I am drawn to</p>
-          <h2>I am most interested in research that can become something real.</h2>
-          <p className="story-text">The research projects I have worked on are different on the surface, medical imaging, voice classification, battery health, and ancient manuscripts, but they all connect through one theme: making difficult data understandable and useful.</p>
-          <p className="story-text">That is the kind of work I enjoy most, where experimentation, modeling, and interpretation all matter at once.</p>
+          <p className="mini">What interests me</p>
+          <h2>Research that can turn into something usable.</h2>
+          <p className="story-text">On the surface these projects are unrelated — medical imaging, voice, battery health, manuscripts — but they all came down to the same thing: making hard data give up a useful answer.</p>
+          <p className="story-text">That's the part I like: the experiment, the model, and figuring out whether the result actually means anything.</p>
         </div>
         <div className="story-visual media-frame media-story">
           <img src={assetLinks.personal.leetcode} alt="Analytical dashboard view showing activity and problem solving metrics." className="feature-media feature-media-fit" />
@@ -45,7 +48,7 @@ const ResearchPage: React.FC = () => {
           <article className="skill-group">
             <p className="mini">Ancient Manuscripts</p>
             <h3>Ink detection in the folded manuscript scans of the Vesuvius dataset</h3>
-            <p>I explored the problem of detecting hidden ink traces in ancient folded manuscripts using the Vesuvius dataset. What drew me to this problem was the challenge of working with unusual image data where the signal is faint and the historical value is high.</p>
+            <p>Worked on detecting ink traces in scans from the Vesuvius Challenge data. The interesting part was the faint signal — the ink is barely separable from the substrate.</p>
             <div className="chips">
               <span className="chip c1">Computer Vision</span>
               <span className="chip c2">Image Analysis</span>
@@ -56,7 +59,7 @@ const ResearchPage: React.FC = () => {
           <article className="skill-group">
             <p className="mini">Predictive Maintenance</p>
             <h3>Battery degradation and RUL prediction for Li-ion batteries</h3>
-            <p>I worked on battery degradation analysis and remaining useful life prediction using both deep learning and traditional machine learning methods. This research was especially interesting because it combines time-series behavior, feature engineering, and practical industrial relevance.</p>
+            <p>Battery degradation analysis and remaining-useful-life prediction with both deep learning and classical ML. Heavy on time-series feature engineering, and directly relevant to the work I did at Statcon.</p>
             <div className="chips">
               <span className="chip c1">RUL Prediction</span>
               <span className="chip c2">Time Series</span>
@@ -68,7 +71,7 @@ const ResearchPage: React.FC = () => {
           <article className="skill-group">
             <p className="mini">Voice Disorder Classification</p>
             <h3>Classification using the FEMH dataset with an ensemble approach</h3>
-            <p>I worked on voice disorder classification using the FEMH dataset, combining spectrogram-based segmentation with metadata-driven features in an ensemble model. This project was a strong example of how signal-based and structured features can complement each other.</p>
+            <p>Voice disorder classification on the FEMH dataset, combining spectrogram segmentation with metadata features in an ensemble. A good case of signal and structured features complementing each other.</p>
             <div className="chips">
               <span className="chip c1">Spectrograms</span>
               <span className="chip c2">Feature Fusion</span>
@@ -80,7 +83,7 @@ const ResearchPage: React.FC = () => {
           <article className="skill-group">
             <p className="mini">Neuroimaging</p>
             <h3>Autism detection using fMRI data with LSTM and autoencoders</h3>
-            <p>I researched autism detection using fMRI data with a combination of LSTM models and autoencoders. I found this problem especially meaningful because it sits at the intersection of deep learning, healthcare, and the challenge of extracting signal from high-dimensional brain data.</p>
+            <p>Autism detection from fMRI data using LSTMs and autoencoders. High-dimensional, low-sample data — most of the work was in not overfitting.</p>
             <div className="chips">
               <span className="chip c1">fMRI</span>
               <span className="chip c2">LSTM</span>
@@ -96,10 +99,10 @@ const ResearchPage: React.FC = () => {
           <img src={assetLinks.projects.aiResearchFlow} alt="Dark research interface with query flow and response output." className="feature-media feature-media-fit" />
         </div>
         <div className="story-copy">
-          <p className="mini">How it shows up in my work</p>
-          <h2>Research has shaped the way I build and think.</h2>
-          <p className="story-text">These projects taught me how to work with difficult datasets, how to compare modeling approaches, and how to think more carefully about whether a model is actually learning something meaningful.</p>
-          <p className="story-text">They also pushed me to see research not just as experimentation, but as a way of developing judgment, one that carries directly into product work and engineering decisions.</p>
+          <p className="mini">What it taught me</p>
+          <h2>It changed how I build.</h2>
+          <p className="story-text">These taught me to be skeptical of good-looking metrics, to compare approaches properly, and to check whether a model is actually learning the thing I think it is.</p>
+          <p className="story-text">That habit of questioning results carries over directly into regular engineering work.</p>
         </div>
       </section>
 
@@ -114,8 +117,8 @@ const ResearchPage: React.FC = () => {
               <p className="mini">Focus</p>
             </div>
             <div className="line-body">
-              <h3>Applied AI, deep learning, and data-driven systems</h3>
-              <p>I want to keep working on research that combines machine learning depth with practical outcomes, especially in domains where the data is complex and the problem matters.</p>
+              <h3>Applied AI and data-driven systems</h3>
+              <p>I'd like to keep working where ML depth meets a concrete outcome, ideally in a domain where the data is genuinely hard.</p>
             </div>
           </article>
           <article className="line-item">
@@ -123,8 +126,8 @@ const ResearchPage: React.FC = () => {
               <p className="mini">Data</p>
             </div>
             <div className="line-body">
-              <h3>Signal, sequence, and pattern-heavy datasets</h3>
-              <p>I am particularly interested in research problems where extracting useful structure from noisy, high-dimensional, or unusual data is part of the challenge.</p>
+              <h3>Signal, sequence, and pattern-heavy data</h3>
+              <p>I'm drawn to problems where just getting structure out of the data is half the work.</p>
             </div>
           </article>
           <article className="line-item">
@@ -132,8 +135,8 @@ const ResearchPage: React.FC = () => {
               <p className="mini">Goal</p>
             </div>
             <div className="line-body">
-              <h3>Keep turning research understanding into useful systems</h3>
-              <p>My long-term goal is to keep combining research thinking with engineering execution so that models, experiments, and insights can turn into systems people can actually use.</p>
+              <h3>Turn research into systems people use</h3>
+              <p>Long term, I want to keep pairing the research side with engineering so experiments don't just stay in a notebook.</p>
             </div>
           </article>
         </div>

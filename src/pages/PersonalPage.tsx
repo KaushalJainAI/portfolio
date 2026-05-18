@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { assetLinks } from '../assets/assetLinks';
+import { ROUTES } from '../site';
+import { usePageMeta } from '../usePageMeta';
 
 const PersonalPage: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  usePageMeta(
+    'Personal',
+    'The quieter story behind the portfolio — Kaushal Jain beyond the code: music, chess, and the interests that keep him grounded.'
+  );
 
   return (
     <main className="container page">
@@ -49,7 +52,7 @@ const PersonalPage: React.FC = () => {
           <p className="mini">The quieter side</p>
           <h2>Some things that matter to me have nothing to do with technology.</h2>
           <p className="story-text">I care about music — piano especially. I care about food, about cooking for people. I enjoy long walks, good conversations, and the kind of movies that stay with you for weeks. Chess keeps my mind sharp in a different way than code does.</p>
-          <p className="story-text">I think the best engineers are also interesting people. I try to be someone who listens well, stays curious about the world, and brings warmth to whatever team or space I'm part of.</p>
+          <p className="story-text">These keep me from being only an engineer. I'd like to think they make me easier to work with and more curious about things outside my own field.</p>
         </div>
         <div className="story-visual media-frame media-story">
           <img src={assetLinks.personal.battleOfBands} alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" />
@@ -99,13 +102,13 @@ const PersonalPage: React.FC = () => {
 
       <section className="story-block section">
         <div className="story-copy">
-          <p className="mini">Thank you for reading</p>
-          <h2>If you've made it this far, you probably care about the person behind the portfolio.</h2>
-          <p className="story-text">That means a lot. Most people skim. If you're the kind of person or team that values who someone is — not just what they can do — I think we'd work well together.</p>
-          <p className="story-text">Feel free to reach out, even if it's just to say hello.</p>
+          <p className="mini">Thanks for reading</p>
+          <h2>That's the longer version.</h2>
+          <p className="story-text">If any of this resonated, or you just want to talk, I'd be happy to hear from you.</p>
+          <p className="story-text">Feel free to reach out, even if it's only to say hello.</p>
           <div className="actions">
-            <Link className="btn primary" to="/contact.html">Say Hello</Link>
-            <Link className="btn" to="/about.html">Back to About</Link>
+            <Link className="btn primary" to={ROUTES.contact}>Say Hello</Link>
+            <Link className="btn" to={ROUTES.about}>Back to About</Link>
           </div>
         </div>
         <div className="story-visual media-frame media-story">

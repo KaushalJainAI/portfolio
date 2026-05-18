@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { assetLinks } from '../assets/assetLinks';
+import { ROUTES } from '../site';
+import { usePageMeta } from '../usePageMeta';
 
 const AboutPage: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  usePageMeta(
+    'About',
+    'The fuller story behind Kaushal Jain — background, academic and professional timeline, achievements, and the interests that shape how he builds software.'
+  );
 
   const [lightbox, setLightbox] = useState<{ images: string[], index: number } | null>(null);
 
@@ -39,12 +42,12 @@ const AboutPage: React.FC = () => {
     <main className="container page about-page">
       <section className="hero hero-inline">
         <div className="hero-copy">
-          <p className="kicker">The story behind the work</p>
-          <h1>A closer look at <span className="accent-band">who I am</span>.</h1>
-          <p className="lead">Beyond the projects and the code — my background, the timeline that shaped my thinking, and the interests that keep me curious. This page is the fuller picture of how I got here and where I am headed.</p>
+          <p className="kicker">About me</p>
+          <h1>A bit more <span className="accent-band">about me</span>.</h1>
+          <p className="lead">My background, how my degree and internship have gone so far, and what I spend time on outside of coursework.</p>
           <div className="actions">
-            <Link className="btn primary" to="/projects.html">See Projects</Link>
-            <Link className="btn" to="/contact.html">Contact Me</Link>
+            <Link className="btn primary" to={ROUTES.projects}>See Projects</Link>
+            <Link className="btn" to={ROUTES.contact}>Contact Me</Link>
           </div>
         </div>
         <div className="media-frame media-tall">
@@ -68,24 +71,24 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-year">2022</div>
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
-                  <h4>Started Computer Science at PEC Chandigarh</h4>
-                  <p>I began my B.Tech journey in Computer Science with a Data Science honors specialization and started building a stronger foundation in software, machine learning, and systems.</p>
+                  <h4>Started B.Tech CSE at PEC Chandigarh</h4>
+                  <p>Began my Computer Science degree with the Data Science honors specialization, and started picking up software, ML, and systems fundamentals.</p>
                 </div>
               </article>
               <article className="timeline-item">
                 <div className="timeline-year">2023-2024</div>
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
-                  <h4>Moved deeper into practical engineering</h4>
-                  <p>As I built more projects, I found myself drawn to backend architecture, APIs, databases, and the side of engineering that directly shapes product quality.</p>
+                  <h4>Focused on backend engineering</h4>
+                  <p>As I built more projects, I gravitated toward backend work — APIs, databases, and how systems are structured.</p>
                 </div>
               </article>
               <article className="timeline-item">
                 <div className="timeline-year">2026</div>
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
-                  <h4>Continuing toward graduation</h4>
-                  <p>I am currently in the final stretch of my degree, focused on sharpening the combination of AI, software engineering, and product-oriented execution.</p>
+                  <h4>Final year</h4>
+                  <p>Now in the last stretch of the degree, splitting time between coursework, projects, and job applications.</p>
                 </div>
               </article>
             </div>
@@ -101,16 +104,16 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-year">2025</div>
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
-                  <h4>Interned at Statcon Electronics</h4>
-                  <p>I worked on predictive maintenance models and a secure Django REST platform for firmware IP workflows, which gave me hands-on experience with real constraints and business needs.</p>
+                  <h4>Intern, Statcon Electronics</h4>
+                  <p>Worked on predictive-maintenance models and a Django REST platform with OTP auth and role-based access for firmware IP workflows.</p>
                 </div>
               </article>
               <article className="timeline-item">
                 <div className="timeline-year">Now</div>
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
-                  <h4>Building practical products across AI and software engineering</h4>
-                  <p>Right now, I am focused on AI systems, backend reliability, and full-stack delivery, while looking for opportunities where I can keep shipping useful software with strong engineering foundations.</p>
+                  <h4>Building and applying</h4>
+                  <p>Currently working on AI and backend projects while looking for a full-time role where I can keep building.</p>
                 </div>
               </article>
             </div>
@@ -125,11 +128,11 @@ const AboutPage: React.FC = () => {
         </div>
         <div className="story-copy">
           <p className="mini">Projects</p>
-          <h2>I like building software that solves real problems.</h2>
-          <p className="story-text">Most of my work sits around AI systems, backend engineering, and full-stack products. I am drawn to projects that are useful in the real world, not just interesting in theory.</p>
-          <p className="story-text">What matters most to me is whether a product feels dependable, thoughtful, and ready to be used by actual people.</p>
+          <h2>What I build.</h2>
+          <p className="story-text">Most of my projects are AI systems, backend services, or full-stack apps. I tend to pick problems that have a concrete user or output rather than toy demos.</p>
+          <p className="story-text">I care most about whether the thing works reliably and is actually usable end to end.</p>
           <div className="actions">
-            <Link className="btn primary" to="/projects.html">See Projects</Link>
+            <Link className="btn primary" to={ROUTES.projects}>See Projects</Link>
           </div>
         </div>
       </section>
@@ -138,9 +141,9 @@ const AboutPage: React.FC = () => {
       <section className="story-block section">
         <div className="story-copy">
           <p className="mini">Technical Skills</p>
-          <h2>My skill set spans the full ML stack and modern backend engineering.</h2>
-          <p className="story-text">I work with Python, Django, FastAPI, and Node.js on the backend, and React and TypeScript on the frontend. On the AI side, I build with PyTorch, scikit-learn, LangChain, LangGraph, and vector databases for retrieval-augmented generation pipelines.</p>
-          <p className="story-text">I am comfortable across the entire delivery chain — from training models and designing APIs to deploying containers and writing CI/CD pipelines — and I focus on keeping systems reliable, testable, and production-ready.</p>
+          <h2>The stack I work in.</h2>
+          <p className="story-text">Backend: Python, Django, FastAPI, Node.js. Frontend: React and TypeScript. ML/AI: PyTorch, scikit-learn, LangChain, LangGraph, and vector databases for retrieval-augmented generation.</p>
+          <p className="story-text">I've also done the surrounding parts — designing APIs, containerizing with Docker, and setting up CI/CD — though I'm strongest on the backend and ML side.</p>
           <div className="chips">
             <span className="chip c1">Python</span>
             <span className="chip c2">Django &amp; FastAPI</span>
@@ -150,7 +153,7 @@ const AboutPage: React.FC = () => {
             <span className="chip c3">Docker &amp; CI/CD</span>
           </div>
           <div className="actions">
-            <Link className="btn" to="/skills.html">See All Skills</Link>
+            <Link className="btn" to={ROUTES.skills}>See All Skills</Link>
           </div>
         </div>
         <div className="story-visual media-frame media-story">
@@ -165,9 +168,9 @@ const AboutPage: React.FC = () => {
         </div>
         <div className="story-copy">
           <p className="mini">Research Interests</p>
-          <h2>I tackle complex discovery problems across computer vision, medical AI, and signal processing.</h2>
-          <p className="story-text">My research work has spanned from detecting hidden ink traces in ancient folded manuscripts using the Vesuvius dataset to predicting the remaining useful life of Li-ion batteries through complex time-series modeling.</p>
-          <p className="story-text">I focus on extracting meaningful signals from difficult data—whether it's neuroimaging fMRI scans or voice spectral patterns—and engineering those insights into reliable, grounded systems like multi-agent RAG architectures.</p>
+          <h2>Research I've worked on.</h2>
+          <p className="story-text">My research-style work has ranged from ink detection on the Vesuvius Challenge manuscript data to remaining-useful-life prediction for Li-ion batteries using time-series models.</p>
+          <p className="story-text">The common thread is pulling a usable signal out of messy data — whether that's sensor data, fMRI scans, or audio — and turning it into something dependable, like a RAG pipeline.</p>
           <div className="chips">
             <span className="chip c1">Semantic Retrieval</span>
             <span className="chip c2">RAG Architectures</span>
@@ -175,7 +178,7 @@ const AboutPage: React.FC = () => {
             <span className="chip c1">NLP &amp; Transformers</span>
           </div>
           <div className="actions">
-            <Link className="btn" to="/research.html">Explore Research</Link>
+            <Link className="btn" to={ROUTES.research}>Explore Research</Link>
           </div>
         </div>
       </section>
@@ -183,10 +186,10 @@ const AboutPage: React.FC = () => {
       {/* ── 4. Non-professional ── */}
       <section className="story-block section">
         <div className="story-copy">
-          <p className="mini">Beyond the code</p>
-          <h2>I enjoy the balance between systems thinking and product feel.</h2>
-          <p className="story-text">Some of my interest comes from engineering itself, understanding how things work, how they scale, and how they stay reliable. The other part comes from the product side, where simplicity, clarity, and usefulness matter just as much as the code underneath.</p>
-          <p className="story-text">That is usually the space I work best in: technical enough to enjoy the complexity, but practical enough to keep the end user in view.</p>
+          <p className="mini">How I work</p>
+          <h2>Engineering and product, together.</h2>
+          <p className="story-text">I like the engineering side — how systems are built, how they scale, why they break — but I also care about whether the end result is actually good to use.</p>
+          <p className="story-text">I tend to do my best work when a project has both: a real technical problem and a real user on the other end.</p>
         </div>
         <div className="story-visual media-frame media-story">
           <img src={assetLinks.personal.chess} alt="A personal workspace with a laptop, chess board, and piano, reflecting a balance between technical and creative work." className="feature-media" />
@@ -199,9 +202,9 @@ const AboutPage: React.FC = () => {
         </div>
         <div className="story-copy">
           <p className="mini">Hobbies</p>
-          <h2>Outside tech, music and chess keep me grounded.</h2>
-          <p className="story-text">I enjoy piano, composition, and chess. They bring a different kind of patience, rhythm, and focus that quietly shapes the way I approach my work.</p>
-          <p className="story-text">For me, those interests are not separate from engineering. They are part of what helps me stay creative and calm while building.</p>
+          <h2>Music and chess.</h2>
+          <p className="story-text">Outside of tech I play piano, write music, and play chess. I've performed competitively with the music club at PEC.</p>
+          <p className="story-text">They're a good counterweight to screen time, and the practice habit carries over more than I expected.</p>
         </div>
       </section>
 
@@ -219,8 +222,8 @@ const AboutPage: React.FC = () => {
               <p className="mini">Music</p>
             </div>
             <div className="line-body">
-              <h3>1st place at Battle of Bands, PEC Fest</h3>
-              <p>Music has been one of the strongest parts of my life outside engineering, and winning Battle of Bands at PEC Fest is one of the moments I value the most.</p>
+              <h3>1st place — Battle of Bands, PEC Fest</h3>
+              <p>One of the things I'm most proud of outside academics. Music's been a big part of my time at college.</p>
             </div>
             <div className="line-side">
               <span className="chip c1">1st Place</span>
@@ -232,8 +235,8 @@ const AboutPage: React.FC = () => {
               <p className="mini">Performance</p>
             </div>
             <div className="line-body">
-              <h3>Podium finishes across college music events</h3>
-              <p>I also placed 2nd at Palaksha and 3rd at Amity Mohali, which reflects the consistency of my involvement in live performance and music competitions.</p>
+              <h3>Other podium finishes</h3>
+              <p>2nd at Palaksha and 3rd at Amity Mohali — a few years of fairly regular live performance.</p>
             </div>
             <div className="line-side">
               <span className="chip c2">2nd Place</span>
@@ -245,8 +248,8 @@ const AboutPage: React.FC = () => {
               <p className="mini">Problem Solving</p>
             </div>
             <div className="line-body">
-              <h3>Solved 500+ problems on LeetCode</h3>
-              <p>Consistent algorithm practice has helped me improve problem solving, coding fluency, and the way I think about data structures, performance, and clean implementation.</p>
+              <h3>500+ problems solved on LeetCode</h3>
+              <p>Regular DSA practice, mostly in Python and C++. It's made me noticeably faster at reasoning about data structures and edge cases.</p>
             </div>
             <div className="line-side">
               <span className="chip c1">LeetCode</span>
@@ -263,11 +266,11 @@ const AboutPage: React.FC = () => {
       <section className="story-block section">
         <div className="story-copy">
           <p className="mini">Contact</p>
-          <h2>I am open to internships, full-time roles, and freelance conversations.</h2>
-          <p className="story-text">If the work involves AI, backend systems, or building useful software, I would love to talk. I am especially excited by teams that care about both technical depth and thoughtful product execution.</p>
-          <p className="story-text">If that sounds like what you are building, let's connect.</p>
+          <h2>Open to roles and collaborations.</h2>
+          <p className="story-text">If you're working on something in AI, backend, or full-stack and need another engineer, I'd be glad to talk.</p>
+          <p className="story-text">The contact page has the best ways to reach me.</p>
           <div className="actions">
-            <Link className="btn primary" to="/contact.html">Get In Touch</Link>
+            <Link className="btn primary" to={ROUTES.contact}>Get In Touch</Link>
           </div>
         </div>
         <div className="story-visual media-frame media-story">
