@@ -1,12 +1,8 @@
-// Central site constants. Keep links/filenames in one place.
+// Central site constants. Keep links and filenames in one place.
 
-// Resume (April 28 version) is served from /public so the download works
-// same-origin and the `download` attribute is honored.
-//
-// It is ALSO uploaded to Cloudinary, but Cloudinary blocks PDF delivery by
-// default. Once "PDF and ZIP files delivery" is enabled in the Cloudinary
-// Console (Settings → Security), switch RESUME_URL to RESUME_URL_CLOUDINARY
-// below to serve it from the CDN instead.
+// Resume is served from /public so the download works same-origin and the
+// `download` attribute is honored. Cloudflare also receives a _headers rule
+// that sends the PDF as an attachment.
 export const RESUME_URL = '/Kaushal_Jain_Resume.pdf';
 export const RESUME_URL_CLOUDINARY =
   'https://res.cloudinary.com/dxhf4srxx/raw/upload/fl_attachment:Kaushal_Jain_Resume/v1779089770/portfolio/Kaushal_Jain_Resume.pdf';

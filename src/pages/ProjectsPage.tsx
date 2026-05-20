@@ -6,7 +6,7 @@ import { usePageMeta } from '../usePageMeta';
 const ProjectsPage: React.FC = () => {
   usePageMeta(
     'Projects',
-    'Selected work by Kaushal Jain across AI, backend systems, and product building — including the NGU Spices platform and agentic AI systems.'
+    'Selected work by Kaushal Jain across backend systems, applied AI, ML pipelines, and deployed full-stack products.'
   );
 
   return (
@@ -14,11 +14,53 @@ const ProjectsPage: React.FC = () => {
       <section className="hero hero-inline">
         <div className="hero-copy">
           <p className="kicker">Projects</p>
-          <h1>The work I usually <span className="accent-band">point people to</span>.</h1>
-          <p className="lead">A few projects that show what I like working on and how I approach it. Source and demos are linked where they're available.</p>
+          <h1>Projects with <span className="accent-band">real product and engineering surface area</span>.</h1>
+          <p className="lead">A focused set of systems I use to show how I think: backend architecture, applied AI, authentication, deployment, and user-facing workflows.</p>
         </div>
         <div className="media-frame media-tall">
           <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" fetchPriority="high" />
+        </div>
+      </section>
+
+      <section className="story-block section">
+        <div className="story-copy">
+          <p className="mini">Featured Case Study</p>
+          <h2>NGU Spices Platform</h2>
+          <p className="story-text">A deployed e-commerce platform for a spice business, built around product discovery, ordering flows, and faster customer interactions.</p>
+          <p className="story-text">I worked across the product surface: React storefront, Django APIs, AI-assisted search, voice ordering, caching, deployment, and the practical details needed to make the site usable for a real business.</p>
+          <div className="case-study-grid">
+            <div>
+              <p className="mini">Problem</p>
+              <p>Turn a traditional product catalog into a usable online ordering experience.</p>
+            </div>
+            <div>
+              <p className="mini">Built</p>
+              <p>Storefront, product browsing, backend APIs, AI search, voice ordering, and caching.</p>
+            </div>
+            <div>
+              <p className="mini">Stack</p>
+              <p>React, Django, Redis, AWS, REST APIs, Cloudflare routing.</p>
+            </div>
+            <div>
+              <p className="mini">Result</p>
+              <p>A live product that demonstrates full-stack ownership, not just a local demo.</p>
+            </div>
+          </div>
+          <div className="chips">
+            <span className="chip c1">React</span>
+            <span className="chip c2">Django</span>
+            <span className="chip c3">Redis</span>
+            <span className="chip c1">AWS</span>
+            <span className="chip c2">AI Search</span>
+            <span className="chip c3">Voice Ordering</span>
+          </div>
+          <div className="actions">
+            <a href="https://nidhimasala.kaushaljain.com" target="_blank" rel="noreferrer" className="btn primary">Open Live Demo</a>
+            <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="btn">View Code</a>
+          </div>
+        </div>
+        <div className="story-visual media-frame media-story">
+          <img src={assetLinks.projects.nguSpices} alt="NGU Spices homepage showing navigation, product browsing, and storefront layout." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -34,7 +76,7 @@ const ProjectsPage: React.FC = () => {
             </div>
             <div className="line-body">
               <h3>NGU Spices Platform</h3>
-              <p>A deployed e-commerce site for a spice business, with AI-assisted search, voice ordering, and Redis caching to cut response times.</p>
+              <p>Built and deployed a full-stack commerce platform with product browsing, AI-assisted search, voice ordering, Redis caching, and a live customer-facing demo.</p>
               <div className="project-links">
                 <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
                   <Github /> Source Code
@@ -47,16 +89,17 @@ const ProjectsPage: React.FC = () => {
             <div className="line-side">
               <span className="chip c1">React</span>
               <span className="chip c2">Django</span>
-              <span className="chip c3">AWS</span>
+              <span className="chip c3">Redis</span>
             </div>
           </article>
+
           <article className="line-item">
             <div className="line-meta">
               <p className="mini">Agentic AI</p>
             </div>
             <div className="line-body">
               <h3>Multi-Agent System + Bot</h3>
-              <p>Specialized agents for chat, web tasks, and retrieval, built on LangGraph with a human approval step in the loop.</p>
+              <p>Designed specialized agents for chat, web tasks, and retrieval workflows using LangGraph, FAISS, Flask, and a human-approval step for safer execution.</p>
               <div className="project-links">
                 <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
                   <Github /> Source Code
@@ -69,13 +112,14 @@ const ProjectsPage: React.FC = () => {
               <span className="chip c3">Flask</span>
             </div>
           </article>
+
           <article className="line-item">
             <div className="line-meta">
               <p className="mini">Predictive Maintenance</p>
             </div>
             <div className="line-body">
               <h3>NASA Battery RUL</h3>
-              <p>Time-series feature engineering and models to estimate remaining useful life from NASA's battery degradation dataset.</p>
+              <p>Built a time-series ML pipeline for remaining-useful-life prediction using NASA battery degradation data, feature engineering, and model comparison.</p>
               <div className="project-links">
                 <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
                   <Github /> Source Code
@@ -84,17 +128,18 @@ const ProjectsPage: React.FC = () => {
             </div>
             <div className="line-side">
               <span className="chip c1">Python</span>
-              <span className="chip c2">ML</span>
-              <span className="chip c3">Analytics</span>
+              <span className="chip c2">Time Series</span>
+              <span className="chip c3">ML</span>
             </div>
           </article>
+
           <article className="line-item">
             <div className="line-meta">
               <p className="mini">Security Platform</p>
             </div>
             <div className="line-body">
               <h3>Firmware IP Protection</h3>
-              <p>A Django REST platform with OTP auth, role-based access, and audit trails for firmware IP workflows. Built during the Statcon internship.</p>
+              <p>Developed a Django REST platform for firmware IP workflows with OTP authentication, JWT sessions, role-based access, and audit trails during the Statcon internship.</p>
               <div className="project-links">
                 <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
                   <Github /> Source Code
@@ -102,7 +147,7 @@ const ProjectsPage: React.FC = () => {
               </div>
             </div>
             <div className="line-side">
-              <span className="chip c1">JWT</span>
+              <span className="chip c1">Django REST</span>
               <span className="chip c2">RBAC</span>
               <span className="chip c3">Audit</span>
             </div>

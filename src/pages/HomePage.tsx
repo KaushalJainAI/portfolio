@@ -6,10 +6,10 @@ import { ROUTES, RESUME_URL, RESUME_DOWNLOAD_NAME } from '../site';
 import { usePageMeta } from '../usePageMeta';
 
 const ROLES = [
-  "Backend Developer",
-  "ML Engineer",
-  "Full-Stack Developer",
-  "CS Student @ PEC",
+  'Backend Developer',
+  'ML Engineer',
+  'Full-Stack Developer',
+  'CS Student @ PEC',
 ];
 
 const Typer: React.FC = () => {
@@ -46,7 +46,6 @@ const Typer: React.FC = () => {
 
   return (
     <div className="type-line">
-      {/* Static, comma-joined label for assistive tech; the animation itself is decorative. */}
       <span className="sr-only">{ROLES.join(', ')}</span>
       <span aria-hidden="true">{text} _</span>
     </div>
@@ -56,24 +55,24 @@ const Typer: React.FC = () => {
 const HomePage: React.FC = () => {
   usePageMeta(
     'Home',
-    'Kaushal Jain — Computer Science student and AI Engineer at PEC Chandigarh, building useful software across AI, backend, and full-stack development.'
+    'Kaushal Jain - backend and AI engineer building production-ready APIs, ML pipelines, and full-stack tools.'
   );
 
   return (
     <main className="container page">
       <section className="hero hero-inline">
         <div className="hero-copy">
-          <p className="kicker">Computer Science @ PEC Chandigarh</p>
-          <h1>Hi, I'm <span className="accent-band">Kaushal Jain</span>.</h1>
-          <p className="lead">Final-year Computer Science student at PEC Chandigarh, on the Data Science honors track. I mostly work on backend services, ML pipelines, and full-stack apps — and I like shipping things people actually use.</p>
+          <p className="kicker">Backend + AI Engineering</p>
+          <h1>Building <span className="accent-band">APIs, ML pipelines, and full-stack tools</span> that ship.</h1>
+          <p className="lead">I'm Kaushal Jain, a Computer Science student at PEC Chandigarh focused on Django/FastAPI backends, applied ML systems, and deployed products people can actually use.</p>
           <Typer />
           <div className="actions">
-            <Link className="btn primary" to={ROUTES.about}>Read My Story</Link>
+            <Link className="btn primary" to={ROUTES.projects}>View Projects</Link>
             <a href={RESUME_URL} download={RESUME_DOWNLOAD_NAME} className="btn secondary">
               <FileText size={18} style={{ marginRight: '0.4rem' }} />
-              Resume
+              Download Resume
             </a>
-            <Link className="btn" to={ROUTES.projects}>See Projects</Link>
+            <Link className="btn" to={ROUTES.contact}>Contact Me</Link>
           </div>
         </div>
         <div className="media-frame media-tall">
@@ -90,17 +89,14 @@ const HomePage: React.FC = () => {
           <Link className="story-card" to={ROUTES.about}>
             <p className="mini">About</p>
             <h3>Background, education, and how I got here.</h3>
-            <p>
-              My timeline so far — coursework at PEC, the Statcon internship, and
-              the things outside code that I spend time on.
-            </p>
+            <p>My timeline so far - coursework at PEC, the Statcon internship, and the engineering habits behind my work.</p>
             <span className="btn">Open About</span>
           </Link>
 
           <Link className="story-card" to={ROUTES.projects}>
             <p className="mini">Projects</p>
-            <h3>Things I've built across AI and backend.</h3>
-            <p>An e-commerce platform, a multi-agent system, a battery RUL model, and a secure API platform — with screenshots.</p>
+            <h3>Proof of work across AI and backend.</h3>
+            <p>Deployed e-commerce, agentic AI, battery RUL modeling, and secure Django APIs - with screenshots, stack details, and outcomes.</p>
             <span className="btn">View Projects</span>
           </Link>
 
@@ -127,11 +123,11 @@ const HomePage: React.FC = () => {
             Open to Work
           </div>
           <p className="mini">Availability</p>
-          <h2>I'm looking for my next role.</h2>
-          <p className="story-text">I'm open to full-time roles and internships in backend, ML, or full-stack engineering, as well as technical collaborations. If you're hiring or building something in that space, I'd like to hear about it.</p>
-          <p className="story-text">My contact details are on the contact page.</p>
+          <h2>I'm looking for backend, AI, and full-stack roles.</h2>
+          <p className="story-text">I'm open to full-time roles and internships where I can build APIs, ML-backed systems, developer tools, or full-stack products with real users.</p>
+          <p className="story-text">If you're hiring for backend, applied AI, or full-stack engineering, the contact page has the fastest ways to reach me.</p>
           <div className="actions">
-            <Link className="btn primary" to={ROUTES.contact}>Get In Touch</Link>
+            <Link className="btn primary" to={ROUTES.contact}>Discuss a Role</Link>
             <a href="https://www.linkedin.com/in/kaushal-jain-72a886259/" target="_blank" rel="noreferrer" className="btn btn-icon">
               <Linkedin size={18} />
               LinkedIn
@@ -139,7 +135,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.profile.teamCollab} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
+          <img src={assetLinks.profile.teamCollab} alt="Engineers collaborating around AI, data science, and systems work." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -157,7 +153,7 @@ const HomePage: React.FC = () => {
       </section>
 
       <div className="personal-nudge">
-        <p>There's also a less formal page about life outside code. <Link to={ROUTES.personal}>Have a look →</Link></p>
+        <p>There's also a less formal page about life outside code. <Link to={ROUTES.personal}>Have a look</Link></p>
       </div>
     </main>
   );
