@@ -77,12 +77,17 @@ npx wrangler pages deploy dist
 ## Important Considerations
 
 ### SPA Routing (React Router)
-Since this project uses `react-router-dom`, a `_redirects` file has been added to the `public/` directory. This ensures that direct navigation to subpages (e.g., `/projects`) doesn't result in a 404 error.
+Since this project uses `react-router-dom`, direct navigation to subpages such as `/projects` must fall back to `index.html`.
 
-**Content of `public/_redirects`:**
-```text
-/*    /index.html   200
+For the Workers deployment, this is handled by `wrangler.toml`:
+
+```toml
+[assets]
+directory = "dist"
+not_found_handling = "single-page-application"
 ```
+
+Do not add a `public/_redirects` file with `/* /index.html 200`. Cloudflare Workers Assets validates redirects during deploy and rejects this rule as an infinite loop.
 
 ### Environment Variables
 If you use any `.env` variables (e.g., for analytics or API keys), you must add them in the Cloudflare Dashboard under:
@@ -102,3 +107,8 @@ To use your own domain:
 If you encounter a deployment error stating that Vite 6 is required (often seen when using the latest Cloudflare Wrangler), ensure your project is using Vite 6.
 - The project has been upgraded to **Vite 6** to maintain compatibility with the latest Cloudflare Pages build environment.
 - If you downgrade Vite, you may need to specify a matching `node` and `npm` version in your Cloudflare build settings.
+
+### Invalid `_redirects` Configuration
+If Wrangler fails with Cloudflare API error code `10021` and says `Infinite loop detected`, remove `public/_redirects`.
+
+This project uses Workers Assets SPA fallback through `wrangler.toml`, so `_redirects` is not needed and can block deployments.

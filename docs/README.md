@@ -9,6 +9,7 @@ This documentation site provides a comprehensive view of the codebase, its archi
 4.  [Features & Pages](./FEATURES.md)
 5.  [Deployment](./deployment.md)
 6.  [SEO and Visibility Strategy](./SEO.md)
+7.  [Cloudflare Redirects Error](./cloudflare-redirects-error.md)
 
 ---
 
