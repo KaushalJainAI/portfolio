@@ -20,8 +20,13 @@ const Navbar: React.FC = () => {
     closeMenu();
   }, [location]);
 
-  const isActive = (path: string) =>
-    location.pathname === path ? 'active' : '';
+  const getLinkProps = (path: string) => {
+    const active = location.pathname === path;
+    return {
+      className: active ? 'active' : '',
+      'aria-current': active ? 'page' as const : undefined,
+    };
+  };
 
   return (
     <nav className="top-nav">
@@ -38,13 +43,13 @@ const Navbar: React.FC = () => {
           Menu
         </button>
         <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="site-nav">
-          <li><Link className={isActive(ROUTES.home)} to={ROUTES.home}>Home</Link></li>
-          <li><Link className={isActive(ROUTES.about)} to={ROUTES.about}>About</Link></li>
-          <li><Link className={isActive(ROUTES.skills)} to={ROUTES.skills}>Skills</Link></li>
-          <li><Link className={isActive(ROUTES.research)} to={ROUTES.research}>Research</Link></li>
-          <li><Link className={isActive(ROUTES.projects)} to={ROUTES.projects}>Projects</Link></li>
+          <li><Link {...getLinkProps(ROUTES.home)} to={ROUTES.home}>Home</Link></li>
+          <li><Link {...getLinkProps(ROUTES.about)} to={ROUTES.about}>About</Link></li>
+          <li><Link {...getLinkProps(ROUTES.skills)} to={ROUTES.skills}>Skills</Link></li>
+          <li><Link {...getLinkProps(ROUTES.research)} to={ROUTES.research}>Research</Link></li>
+          <li><Link {...getLinkProps(ROUTES.projects)} to={ROUTES.projects}>Projects</Link></li>
           <li><a href={RESUME_URL} download={RESUME_DOWNLOAD_NAME} className="nav-resume">Resume</a></li>
-          <li><Link className={isActive(ROUTES.contact)} to={ROUTES.contact}>Contact</Link></li>
+          <li><Link {...getLinkProps(ROUTES.contact)} to={ROUTES.contact}>Contact</Link></li>
         </ul>
       </div>
     </nav>

@@ -23,7 +23,7 @@ const ResearchPage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.projects.aiResearchFlow} alt="A detailed 3D collage of machine learning research: neural network architectures, heatmaps, fMRI voxels, and ensemble models over a sophisticated glassmorphism background." className="feature-media" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="A detailed 3D collage of machine learning research: neural network architectures, heatmaps, fMRI voxels, and ensemble models over a sophisticated glassmorphism background." className="feature-media" fetchPriority="high" />
         </div>
       </section>
 
@@ -35,7 +35,7 @@ const ResearchPage: React.FC = () => {
           <p className="story-text">That's the part I like: the experiment, the model, and figuring out whether the result actually means anything.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.leetcode} alt="Analytical dashboard view showing activity and problem solving metrics." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.leetcode} alt="Analytical dashboard view showing activity and problem solving metrics." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -96,7 +96,7 @@ const ResearchPage: React.FC = () => {
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.projects.aiResearchFlow} alt="Dark research interface with query flow and response output." className="feature-media feature-media-fit" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="Dark research interface with query flow and response output." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">What it taught me</p>

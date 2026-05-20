@@ -19,7 +19,7 @@ const ContactPage: React.FC = () => {
           <p className="lead">If you're hiring or have a project in mind, email is the fastest way to reach me. Details below.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.profile.contactHero} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media" />
+          <img src={assetLinks.profile.contactHero} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media" fetchPriority="high" />
         </div>
       </section>
 

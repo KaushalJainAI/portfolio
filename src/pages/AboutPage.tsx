@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { assetLinks } from '../assets/assetLinks';
 import { ROUTES } from '../site';
@@ -17,6 +17,19 @@ const AboutPage: React.FC = () => {
   };
 
   const closeLightbox = () => setLightbox(null);
+
+  useEffect(() => {
+    if (!lightbox) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightbox]);
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -51,7 +64,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" />
+          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" fetchPriority="high" />
         </div>
       </section>
 
@@ -124,7 +137,7 @@ const AboutPage: React.FC = () => {
       {/* ── 1. Projects ── */}
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" />
+          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">Projects</p>
@@ -157,14 +170,14 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.skills.techStack} alt="A professional 3D composition of tech logos (Python, Django, React, Docker, etc.) floating over a modern glassmorphism background." className="feature-media feature-media-fit" />
+          <img src={assetLinks.skills.techStack} alt="A professional 3D composition of tech logos (Python, Django, React, Docker, etc.) floating over a modern glassmorphism background." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
       {/* ── 3. Research ── */}
       <section className="story-block story-block-reverse section" style={{ gridTemplateColumns: 'minmax(16rem, 0.7fr) minmax(0, 1.3fr)' }}>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.projects.aiResearchFlow} alt="A detailed 3D collage of machine learning research elements: neural networks, heatmaps for feature importance, fMRI voxels, and ensemble outputs over a modern translucent background." className="feature-media" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="A detailed 3D collage of machine learning research elements: neural networks, heatmaps for feature importance, fMRI voxels, and ensemble outputs over a modern translucent background." className="feature-media" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">Research Interests</p>
@@ -192,13 +205,13 @@ const AboutPage: React.FC = () => {
           <p className="story-text">I tend to do my best work when a project has both: a real technical problem and a real user on the other end.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.chess} alt="A personal workspace with a laptop, chess board, and piano, reflecting a balance between technical and creative work." className="feature-media" />
+          <img src={assetLinks.personal.chess} alt="A personal workspace with a laptop, chess board, and piano, reflecting a balance between technical and creative work." className="feature-media" loading="lazy" decoding="async" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse story-block-visual-sm section">
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.piano} alt="Kaushal Jain playing melodies outdoors" className="feature-media" />
+          <img src={assetLinks.personal.piano} alt="Kaushal Jain playing melodies outdoors" className="feature-media" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">Hobbies</p>
@@ -216,9 +229,9 @@ const AboutPage: React.FC = () => {
         <div className="line-list">
           <article className="line-item">
             <div className="line-meta">
-              <div className="testimony-avatar" onClick={() => openLightbox(musicImages, 0)}>
+              <button className="testimony-avatar" type="button" onClick={() => openLightbox(musicImages, 0)} aria-label="Open music achievement photos">
                 <img src={musicImages[0]} alt="Trophy" className="avatar-img" />
-              </div>
+              </button>
               <p className="mini">Music</p>
             </div>
             <div className="line-body">
@@ -254,9 +267,9 @@ const AboutPage: React.FC = () => {
             <div className="line-side">
               <span className="chip c1">LeetCode</span>
               <span className="chip c2">500+ Solved</span>
-              <div className="testimony-avatar" style={{ marginLeft: '1rem' }} onClick={() => openLightbox([assetLinks.personal.leetcode], 0)}>
+              <button className="testimony-avatar" type="button" style={{ marginLeft: '1rem' }} onClick={() => openLightbox([assetLinks.personal.leetcode], 0)} aria-label="Open LeetCode progress screenshot">
                 <img src={assetLinks.personal.leetcode} alt="LeetCode Progress" className="avatar-img" />
-              </div>
+              </button>
             </div>
           </article>
         </div>
@@ -274,7 +287,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.profile.teamCollab} alt="Engineering professionals collaborating in a modern office." className="feature-media" />
+          <img src={assetLinks.profile.teamCollab} alt="Engineering professionals collaborating in a modern office." className="feature-media" loading="lazy" decoding="async" />
         </div>
       </section>
       {/* ── Lightbox ── */}

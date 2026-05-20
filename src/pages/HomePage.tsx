@@ -77,7 +77,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" />
+          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" fetchPriority="high" />
         </div>
       </section>
 
@@ -139,7 +139,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.profile.teamCollab} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media feature-media-fit" />
+          <img src={assetLinks.profile.teamCollab} alt="A sophisticated, 3D composition representing AI, Data Science, and Systems Engineering through floating glassmorphism elements over a modern workspace." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 

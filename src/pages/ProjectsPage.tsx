@@ -18,7 +18,7 @@ const ProjectsPage: React.FC = () => {
           <p className="lead">A few projects that show what I like working on and how I approach it. Source and demos are linked where they're available.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" />
+          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" fetchPriority="high" />
         </div>
       </section>
 
@@ -119,35 +119,35 @@ const ProjectsPage: React.FC = () => {
         <div className="project-collage">
           <figure className="project-tile project-tile-wide">
             <div className="media-frame project-photo">
-              <img src={assetLinks.projects.nguSpices} alt="NGU Spices homepage showing hero section, navigation, and featured spice products." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.nguSpices} alt="NGU Spices homepage showing hero section, navigation, and featured spice products." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
             </div>
             <figcaption><span>NGU Spices</span> Storefront experience</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src={assetLinks.projects.multiAgentSystem} alt="Workflow dashboard showing multiple draft workflows in a dark interface." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.multiAgentSystem} alt="Workflow dashboard showing multiple draft workflows in a dark interface." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
             </div>
             <figcaption><span>Multi-Agent System</span> Workflow dashboard</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src={assetLinks.projects.nasaBatteryRul} alt="A professional battery health and predictive maintenance visualization dashboard showing RUL metrics." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.nasaBatteryRul} alt="A professional battery health and predictive maintenance visualization dashboard showing RUL metrics." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
             </div>
             <figcaption><span>NASA Battery RUL</span> Predictive maintenance analysis</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src={assetLinks.projects.firmwareSecurity} alt="Authentication screen demo with email and password fields and a sign in action." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.firmwareSecurity} alt="Authentication screen demo with email and password fields and a sign in action." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
             </div>
             <figcaption><span>Firmware Security Platform</span> Secure sign-in screen</figcaption>
           </figure>
 
           <figure className="project-tile">
             <div className="media-frame project-photo">
-              <img src={assetLinks.projects.aiResearchFlow} alt="Dark interface showing online workspace and research query flow." className="feature-media feature-media-fit" />
+              <img src={assetLinks.projects.aiResearchFlow} alt="Dark interface showing online workspace and research query flow." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
             </div>
             <figcaption><span>AI Research Flow</span> Conversational interface</figcaption>
           </figure>

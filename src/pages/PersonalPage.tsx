@@ -19,7 +19,7 @@ const PersonalPage: React.FC = () => {
           <p className="lead">This page is a little different. It's not about projects or skills — it's about the things that shaped who I am before I ever wrote a line of code. Family, roots, and the quieter parts of my story.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.profile.avatar} alt="Kaushal Jain" className="feature-media" />
+          <img src={assetLinks.profile.avatar} alt="Kaushal Jain" className="feature-media" fetchPriority="high" />
         </div>
       </section>
 
@@ -31,13 +31,13 @@ const PersonalPage: React.FC = () => {
           <p className="story-text">Growing up, there was always an emphasis on doing things properly, being honest about what you know and don't know, and treating people with respect. Those values didn't come from a textbook — they came from home.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.indiaLandscape} alt="A warm, atmospheric Indian landscape at sunset." className="feature-media" />
+          <img src={assetLinks.personal.indiaLandscape} alt="A warm, atmospheric Indian landscape at sunset." className="feature-media" loading="lazy" decoding="async" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.indianFood} alt="Aesthetic, high-end presentation of traditional Indian home-cooked food." className="feature-media" />
+          <img src={assetLinks.personal.indianFood} alt="Aesthetic, high-end presentation of traditional Indian home-cooked food." className="feature-media" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">Family</p>
@@ -55,13 +55,13 @@ const PersonalPage: React.FC = () => {
           <p className="story-text">These keep me from being only an engineer. I'd like to think they make me easier to work with and more curious about things outside my own field.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.battleOfBands} alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.battleOfBands} alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.pecCampus} alt="Punjab Engineering College campus." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.pecCampus} alt="Punjab Engineering College campus." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">College life</p>
@@ -112,7 +112,7 @@ const PersonalPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.warmConversation} alt="A warm and genuine conversation in a modern cafe setting." className="feature-media" />
+          <img src={assetLinks.personal.warmConversation} alt="A warm and genuine conversation in a modern cafe setting." className="feature-media" loading="lazy" decoding="async" />
         </div>
       </section>
     </main>

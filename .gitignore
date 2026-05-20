@@ -27,6 +27,13 @@ build
 .idea
 .antigravity
 .gemini
+.claude/settings.local.json
 backup/
-public/
+
+# Public deploy assets
+public/*
+!public/Kaushal_Jain_Resume.pdf
+!public/_redirects
+!public/robots.txt
+!public/sitemap.xml
 tmp/

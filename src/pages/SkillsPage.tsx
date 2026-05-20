@@ -23,13 +23,13 @@ const SkillsPage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall" style={{ maxWidth: '31.2rem' }}>
-          <img src={assetLinks.skills.heroCollage} alt="A professional 3D collage of tech logos (AWS, Python, Django, React, etc.) floating in a modern glassmorphism-style composition." className="feature-media" style={{ transform: 'scale(1.05)', transformOrigin: 'center' }} />
+          <img src={assetLinks.skills.heroCollage} alt="A professional 3D collage of tech logos (AWS, Python, Django, React, etc.) floating in a modern glassmorphism-style composition." className="feature-media" style={{ transform: 'scale(1.05)', transformOrigin: 'center' }} fetchPriority="high" />
         </div>
       </section>
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story" style={{ maxWidth: '80%', margin: '0 auto' }}>
-          <img src={assetLinks.skills.techStack} alt="A sophisticated visualization of skills as architectural building blocks, showing how different technical tools assemble into a complete system." className="feature-media" style={{ width: '100%', height: 'auto', objectFit: 'cover', transform: 'scale(1)' }} />
+          <img src={assetLinks.skills.techStack} alt="A sophisticated visualization of skills as architectural building blocks, showing how different technical tools assemble into a complete system." className="feature-media" style={{ width: '100%', height: 'auto', objectFit: 'cover', transform: 'scale(1)' }} loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">How I picked these up</p>
@@ -155,7 +155,7 @@ const SkillsPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.leetcode} alt="LeetCode profile screenshot showing 500 solved problems and submission activity." className="feature-media feature-media-fit" />
+          <img src={assetLinks.personal.leetcode} alt="LeetCode profile screenshot showing 500 solved problems and submission activity." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -203,7 +203,7 @@ const SkillsPage: React.FC = () => {
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story" style={{ maxWidth: '80%', margin: '0 auto' }}>
-          <img src={assetLinks.skills.techStack} alt="A professional 3D visualization showing a developer's holistic thinking process: system planning, UI/UX design, CI/CD pipelines, documentation, and scalability." className="feature-media" />
+          <img src={assetLinks.skills.techStack} alt="A professional 3D visualization showing a developer's holistic thinking process: system planning, UI/UX design, CI/CD pipelines, documentation, and scalability." className="feature-media" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">How I approach a project</p>
@@ -224,7 +224,7 @@ const SkillsPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story" style={{ maxWidth: '29rem' }}>
-          <img src={assetLinks.profile.heroWorkspace} alt="A professional dual-monitor setup with one screen showing a modern code editor and the other displaying Kaushal Jain's GitHub profile, complete with a mechanical keyboard and sleek desk." className="feature-media" />
+          <img src={assetLinks.profile.heroWorkspace} alt="A professional dual-monitor setup with one screen showing a modern code editor and the other displaying Kaushal Jain's GitHub profile, complete with a mechanical keyboard and sleek desk." className="feature-media" loading="lazy" decoding="async" />
         </div>
       </section>
 

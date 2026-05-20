@@ -16,6 +16,19 @@ export function usePageMeta(title: string, description: string) {
     }
     meta.setAttribute('content', description);
 
+    document
+      .querySelector('meta[property="og:title"]')
+      ?.setAttribute('content', `${title} | ${BASE_TITLE}`);
+    document
+      .querySelector('meta[property="og:description"]')
+      ?.setAttribute('content', description);
+    document
+      .querySelector('meta[name="twitter:title"]')
+      ?.setAttribute('content', `${title} | ${BASE_TITLE}`);
+    document
+      .querySelector('meta[name="twitter:description"]')
+      ?.setAttribute('content', description);
+
     window.scrollTo(0, 0);
   }, [title, description]);
 }

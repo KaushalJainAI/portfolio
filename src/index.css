@@ -993,6 +993,8 @@ h2 {
 .testimony-avatar {
   width: 5.5rem;
   height: 5.5rem;
+  display: block;
+  padding: 0;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid rgba(31, 26, 23, 0.12);
