@@ -33,6 +33,7 @@ backup/
 # Public deploy assets
 public/*
 !public/Kaushal_Jain_Resume.pdf
+!public/_headers
 !public/_redirects
 !public/robots.txt
 !public/sitemap.xml
