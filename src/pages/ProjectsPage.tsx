@@ -152,6 +152,97 @@ const ProjectsPage: React.FC = () => {
               <span className="chip c3">Audit</span>
             </div>
           </article>
+
+          <article className="line-item">
+            <div className="line-meta">
+              <p className="mini">Infrastructure AI</p>
+            </div>
+            <div className="line-body">
+              <h3>FaultLine</h3>
+              <p>Built around fault detection and issue triage workflows, with a focus on turning noisy signals into clearer engineering decisions and faster diagnosis.</p>
+              <div className="project-links">
+                <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
+                  <Github /> Source Code
+                </a>
+              </div>
+            </div>
+            <div className="line-side">
+              <span className="chip c1">Python</span>
+              <span className="chip c2">ML</span>
+              <span className="chip c3">Diagnostics</span>
+            </div>
+          </article>
+
+          <article className="line-item">
+            <div className="line-meta">
+              <p className="mini">Health + AI</p>
+            </div>
+            <div className="line-body">
+              <h3>FitGenius</h3>
+              <p>A fitness-focused application concept for personalized workout and wellness guidance, combining user inputs with recommendation-style product logic.</p>
+              <div className="project-links">
+                <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
+                  <Github /> Source Code
+                </a>
+              </div>
+            </div>
+            <div className="line-side">
+              <span className="chip c1">React</span>
+              <span className="chip c2">AI</span>
+              <span className="chip c3">Recommendations</span>
+            </div>
+          </article>
+
+          <article className="line-item">
+            <div className="line-meta">
+              <p className="mini">Career Tech</p>
+            </div>
+            <div className="line-body">
+              <h3>Career Navigator</h3>
+              <p>A career-guidance product idea for helping users map skills, roles, resumes, and next actions into a clearer job-search path.</p>
+              <div className="project-links">
+                <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="project-link">
+                  <Github /> Source Code
+                </a>
+              </div>
+            </div>
+            <div className="line-side">
+              <span className="chip c1">LLM</span>
+              <span className="chip c2">Career</span>
+              <span className="chip c3">Full-Stack</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <span className="section-bullet" aria-hidden="true"></span>
+          <h2>More builds</h2>
+        </div>
+        <p className="section-intro">Smaller projects and experiments that show range across AI products, backend services, and applied ML workflows.</p>
+        <div className="skill-grid">
+          <article className="skill-group">
+            <p className="mini">AI Assistant</p>
+            <h3>AI Research Flow</h3>
+            <p>Conversational research and retrieval workflow experiments for structuring queries, responses, and context across technical material.</p>
+            <div className="chips">
+              <span className="chip c1">RAG</span>
+              <span className="chip c2">NLP</span>
+              <span className="chip c3">Research</span>
+            </div>
+          </article>
+
+          <article className="skill-group">
+            <p className="mini">Developer Practice</p>
+            <h3>DSA and systems practice</h3>
+            <p>Algorithm and data-structure practice connected to backend reasoning, edge cases, performance, and interview preparation.</p>
+            <div className="chips">
+              <span className="chip c1">500+ LeetCode</span>
+              <span className="chip c2">Python</span>
+              <span className="chip c3">C++</span>
+            </div>
+          </article>
         </div>
       </section>
 
