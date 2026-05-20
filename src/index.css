@@ -442,6 +442,9 @@ h1 {
   padding: 0 0.14em;
   color: var(--accent-strong);
   background-image: linear-gradient(180deg, transparent 52%, rgba(198, 132, 81, 0.26) 52%);
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .lead {
@@ -1479,6 +1482,10 @@ footer {
     line-height: 1.65;
   }
 
+  .type-line {
+    display: none;
+  }
+
   .section {
     padding-bottom: var(--space-9);
   }
@@ -1565,7 +1572,7 @@ footer {
 
 @media (max-width: 520px) {
   .container {
-    width: min(100% - 1rem, var(--container));
+    width: min(100% - 1.5rem, var(--container));
   }
 
   .top-nav {
@@ -1615,7 +1622,7 @@ footer {
   }
 
   h1 {
-    font-size: clamp(1.8rem, 7.4vw, 2.25rem);
+    font-size: clamp(1.62rem, 6.2vw, 1.95rem);
     line-height: 1.08;
   }
 
@@ -1656,7 +1663,7 @@ footer {
 
 @media (max-width: 380px) {
   .container {
-    width: min(100% - 0.75rem, var(--container));
+    width: min(100% - 1.25rem, var(--container));
   }
 
   .hero {
@@ -1664,7 +1671,7 @@ footer {
   }
 
   h1 {
-    font-size: clamp(1.65rem, 7.2vw, 2.05rem);
+    font-size: clamp(1.5rem, 6vw, 1.8rem);
   }
 
   .lead,

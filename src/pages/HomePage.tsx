@@ -63,8 +63,8 @@ const HomePage: React.FC = () => {
       <section className="hero hero-inline">
         <div className="hero-copy">
           <p className="kicker">Backend + AI Engineering</p>
-          <h1>Building <span className="accent-band">APIs, ML pipelines, and full-stack tools</span> that ship.</h1>
-          <p className="lead">I'm Kaushal Jain, a Computer Science student at PEC Chandigarh focused on Django/FastAPI backends, applied ML systems, and deployed products people can actually use.</p>
+          <h1>Building <span className="accent-band">backend and AI tools</span> that ship.</h1>
+          <p className="lead">I'm Kaushal Jain, a Computer Science student at PEC Chandigarh focused on Django/FastAPI APIs, ML pipelines, and deployed full-stack products people can actually use.</p>
           <Typer />
           <div className="actions">
             <Link className="btn primary" to={ROUTES.projects}>View Projects</Link>
