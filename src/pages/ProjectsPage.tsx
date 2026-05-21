@@ -6,7 +6,7 @@ import { usePageMeta } from '../usePageMeta';
 const ProjectsPage: React.FC = () => {
   usePageMeta(
     'Projects',
-    'Selected work by Kaushal Jain across backend systems, applied AI, ML pipelines, and deployed full-stack products.'
+    'AIAAS and selected work by Kaushal Jain across backend systems, applied AI, ML pipelines, and deployed full-stack products.'
   );
 
   return (
@@ -14,60 +14,57 @@ const ProjectsPage: React.FC = () => {
       <section className="hero hero-inline">
         <div className="hero-copy">
           <p className="kicker">Projects</p>
-          <h1>Projects with <span className="accent-band">real product and engineering surface area</span>.</h1>
-          <p className="lead">A focused set of systems I use to show how I think: backend architecture, applied AI, authentication, deployment, and user-facing workflows.</p>
-        </div>
-        <div className="media-frame media-tall">
-          <img src={assetLinks.profile.heroWorkspace} alt="A professional software engineering workspace with an ultra-wide monitor showing code." className="feature-media" fetchPriority="high" />
+          <h1><span className="accent-band">AIAAS</span> is the main build.</h1>
+          <p className="lead">Supporting projects show the range behind it: AI product architecture, backend services, authentication, deployment, and user-facing workflows.</p>
         </div>
       </section>
 
       <section className="story-block section">
         <div className="story-copy">
-          <p className="mini">Featured Case Study</p>
-          <h2>NGU Spices Platform</h2>
-          <p className="story-text">A deployed e-commerce platform for a spice business, built around product discovery, ordering flows, and faster customer interactions.</p>
-          <p className="story-text">I worked across the product surface: React storefront, Django APIs, AI-assisted search, voice ordering, caching, deployment, and the practical details needed to make the site usable for a real business.</p>
+          <p className="mini">Hero Project</p>
+          <h2>AIAAS</h2>
+          <p className="story-text">An AI-as-a-service platform concept for packaging reusable AI capabilities into practical workflows that teams can use without rebuilding the same agent, retrieval, and automation layers from scratch.</p>
+          <p className="story-text">The project sits closest to the kind of engineering I want to do: backend-first AI systems, configurable workflows, retrieval, human approval, and a product surface that makes complex AI behavior easier to use.</p>
           <div className="case-study-grid">
             <div>
               <p className="mini">Problem</p>
-              <p>Turn a traditional product catalog into a usable online ordering experience.</p>
+              <p>Make AI workflows reusable, configurable, and easier to integrate into real product or business use cases.</p>
             </div>
             <div>
               <p className="mini">Built</p>
-              <p>Storefront, product browsing, backend APIs, AI search, voice ordering, and caching.</p>
+              <p>Agent workflow structure, retrieval-oriented flows, backend APIs, UI surfaces, and approval-aware automation patterns.</p>
             </div>
             <div>
               <p className="mini">Stack</p>
-              <p>React, Django, Redis, AWS, REST APIs, Cloudflare routing.</p>
+              <p>React, Python backend services, LLM orchestration, vector retrieval, REST APIs, and deployment-focused architecture.</p>
             </div>
             <div>
               <p className="mini">Result</p>
-              <p>A live product that demonstrates full-stack ownership, not just a local demo.</p>
+              <p>A strong portfolio anchor for applied AI engineering, backend ownership, and product thinking.</p>
             </div>
           </div>
           <div className="chips">
             <span className="chip c1">React</span>
-            <span className="chip c2">Django</span>
-            <span className="chip c3">Redis</span>
-            <span className="chip c1">AWS</span>
-            <span className="chip c2">AI Search</span>
-            <span className="chip c3">Voice Ordering</span>
+            <span className="chip c2">Python</span>
+            <span className="chip c3">LLM Workflows</span>
+            <span className="chip c1">RAG</span>
+            <span className="chip c2">Agents</span>
+            <span className="chip c3">APIs</span>
           </div>
           <div className="actions">
-            <a href="https://nidhimasala.kaushaljain.com" target="_blank" rel="noreferrer" className="btn primary">Open Live Demo</a>
-            <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="btn">View Code</a>
+            <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="btn primary">View Code</a>
+            <a href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer" className="btn">GitHub Profile</a>
           </div>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.projects.nguSpices} alt="NGU Spices homepage showing navigation, product browsing, and storefront layout." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
+          <img src={assetLinks.projects.aiResearchFlow} alt="AI workflow interface representing retrieval, agent orchestration, and applied AI product flows." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
       <section className="section">
         <div className="section-head">
           <span className="section-bullet" aria-hidden="true"></span>
-          <h2>Featured work</h2>
+          <h2>Supporting projects</h2>
         </div>
         <div className="line-list">
           <article className="line-item">

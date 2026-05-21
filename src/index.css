@@ -452,6 +452,7 @@ h1 {
   max-width: 60ch;
   font-size: 1.05rem;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .type-line {
@@ -716,6 +717,7 @@ h2 {
   font-size: 1.02rem;
   line-height: 1.85;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .story-visual {
@@ -1447,6 +1449,7 @@ footer {
 
   .hero-copy {
     max-width: 100%;
+    min-width: 0;
   }
 
   .about-page .hero {
@@ -1478,8 +1481,17 @@ footer {
   }
 
   .lead {
+    max-width: 100%;
     font-size: 1rem;
     line-height: 1.65;
+  }
+
+  .story-copy,
+  .line-body,
+  .skill-group,
+  .case-study-grid > div {
+    max-width: 100%;
+    min-width: 0;
   }
 
   .type-line {
@@ -1599,6 +1611,15 @@ footer {
 
   .page {
     padding-top: var(--space-7);
+  }
+
+  .hero-copy,
+  .story-copy,
+  .line-body,
+  .skill-group,
+  .case-study-grid > div,
+  .section-intro {
+    width: min(100%, 18rem);
   }
 
   .actions {
