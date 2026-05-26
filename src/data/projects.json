@@ -67,9 +67,9 @@
       "slug": "career-navigator",
       "title": "Career Navigator",
       "category": "personal",
-      "status": "Scaffolded MVP",
+      "status": "Under development",
       "eyebrow": "Candidate-owned job agent",
-      "summary": "An AI job-hunt platform for role discovery, structured profile onboarding, resume-to-JD scoring, truthful tailoring, alerts, and interview grilling.",
+      "summary": "Under-development AI job-hunt platform for role discovery, structured profile onboarding, resume-to-JD scoring, truthful tailoring, alerts, and interview grilling.",
       "why": "Job hunting is a loop of discovery, tailoring, applying, preparing, and learning. I built this to make that loop agent-assisted while keeping the candidate in control.",
       "impact": "Shows product thinking around agents, HITL approval, user trust, and multi-step workflows.",
       "built": [
