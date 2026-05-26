@@ -56,8 +56,8 @@ const AboutPage: React.FC = () => {
       <section className="hero hero-inline">
         <div className="hero-copy">
           <p className="kicker">About me</p>
-          <h1>A bit more <span className="accent-band">about me</span>.</h1>
-          <p className="lead">My background, how my degree and internship have gone so far, and what I spend time on outside of coursework.</p>
+          <h1>A closer look at <span className="accent-band">how I build</span>.</h1>
+          <p className="lead">I am a backend and applied AI engineer in training, shaped by PEC coursework, hands-on projects, internship work, and a steady bias toward building things that hold up outside a demo.</p>
           <div className="actions">
             <Link className="btn primary" to={ROUTES.projects}>See Projects</Link>
             <Link className="btn" to={ROUTES.contact}>Contact Me</Link>
@@ -85,7 +85,7 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
                   <h4>Started B.Tech CSE at PEC Chandigarh</h4>
-                  <p>Began my Computer Science degree with the Data Science honors specialization, and started picking up software, ML, and systems fundamentals.</p>
+                  <p>Began my Computer Science degree with a Data Science honors focus, building foundations in software engineering, algorithms, ML, and systems thinking.</p>
                 </div>
               </article>
               <article className="timeline-item">
@@ -93,7 +93,7 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
                   <h4>Focused on backend engineering</h4>
-                  <p>As I built more projects, I gravitated toward backend work — APIs, databases, and how systems are structured.</p>
+                  <p>As my projects grew, I gravitated toward APIs, databases, auth flows, deployment, and the practical decisions that make software dependable.</p>
                 </div>
               </article>
               <article className="timeline-item">
@@ -101,7 +101,7 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
                   <h4>Final year</h4>
-                  <p>Now in the last stretch of the degree, splitting time between coursework, projects, and job applications.</p>
+                  <p>Now in the final stretch of the degree, I am sharpening my backend, ML, and full-stack skills while preparing for professional engineering roles.</p>
                 </div>
               </article>
             </div>
@@ -118,7 +118,7 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
                   <h4>Intern, Statcon Electronics</h4>
-                  <p>Worked on predictive-maintenance models and a Django REST platform with OTP auth and role-based access for firmware IP workflows.</p>
+                  <p>Worked on predictive-maintenance models and a Django REST platform with OTP authentication and role-based access for firmware IP workflows.</p>
                 </div>
               </article>
               <article className="timeline-item">
@@ -126,7 +126,7 @@ const AboutPage: React.FC = () => {
                 <div className="timeline-marker" aria-hidden="true"></div>
                 <div className="timeline-content">
                   <h4>Building and applying</h4>
-                  <p>Currently working on AI and backend projects while looking for a full-time role where I can keep building.</p>
+                  <p>Currently building applied AI and backend projects while looking for a full-time role where I can contribute, learn quickly, and ship useful systems.</p>
                 </div>
               </article>
             </div>
@@ -142,8 +142,8 @@ const AboutPage: React.FC = () => {
         <div className="story-copy">
           <p className="mini">Projects</p>
           <h2>What I build.</h2>
-          <p className="story-text">Most of my projects are AI systems, backend services, or full-stack apps. I tend to pick problems that have a concrete user or output rather than toy demos.</p>
-          <p className="story-text">I care most about whether the thing works reliably and is actually usable end to end.</p>
+          <p className="story-text">Most of my projects sit at the intersection of backend systems, applied AI, and product thinking. I prefer problems with a real user, a clear workflow, and enough complexity to demand careful engineering.</p>
+          <p className="story-text">I care about whether the system is understandable, testable, reliable, and usable end to end, not just whether the first demo works.</p>
           <div className="actions">
             <Link className="btn primary" to={ROUTES.projects}>See Projects</Link>
           </div>
@@ -155,8 +155,8 @@ const AboutPage: React.FC = () => {
         <div className="story-copy">
           <p className="mini">Technical Skills</p>
           <h2>The stack I work in.</h2>
-          <p className="story-text">Backend: Python, Django, FastAPI, Node.js. Frontend: React and TypeScript. ML/AI: PyTorch, scikit-learn, LangChain, LangGraph, and vector databases for retrieval-augmented generation.</p>
-          <p className="story-text">I've also done the surrounding parts — designing APIs, containerizing with Docker, and setting up CI/CD — though I'm strongest on the backend and ML side.</p>
+          <p className="story-text">Backend: Python, Django, FastAPI, and Node.js. Frontend: React and TypeScript. ML/AI: PyTorch, scikit-learn, LangChain, LangGraph, and vector databases for retrieval-augmented generation.</p>
+          <p className="story-text">I have also worked across the surrounding pieces: API design, Docker, CI/CD, authentication, and deployment. My strongest areas are backend engineering and applied ML.</p>
           <div className="chips">
             <span className="chip c1">Python</span>
             <span className="chip c2">Django &amp; FastAPI</span>
@@ -201,8 +201,8 @@ const AboutPage: React.FC = () => {
         <div className="story-copy">
           <p className="mini">How I work</p>
           <h2>Engineering and product, together.</h2>
-          <p className="story-text">I like the engineering side — how systems are built, how they scale, why they break — but I also care about whether the end result is actually good to use.</p>
-          <p className="story-text">I tend to do my best work when a project has both: a real technical problem and a real user on the other end.</p>
+          <p className="story-text">I like the engineering side: how systems are built, how they scale, why they fail, and how to make them easier to reason about. I also care about the person using the result.</p>
+          <p className="story-text">My best work happens when there is both a meaningful technical problem and a real user on the other end.</p>
         </div>
         <div className="story-visual media-frame media-story">
           <img src={assetLinks.personal.chess} alt="A personal workspace with a laptop, chess board, and piano, reflecting a balance between technical and creative work." className="feature-media" loading="lazy" decoding="async" />
@@ -267,9 +267,6 @@ const AboutPage: React.FC = () => {
             <div className="line-side">
               <span className="chip c1">LeetCode</span>
               <span className="chip c2">500+ Solved</span>
-              <button className="testimony-avatar" type="button" style={{ marginLeft: '1rem' }} onClick={() => openLightbox([assetLinks.personal.leetcode], 0)} aria-label="Open LeetCode progress screenshot">
-                <img src={assetLinks.personal.leetcode} alt="LeetCode Progress" className="avatar-img" />
-              </button>
             </div>
           </article>
         </div>
