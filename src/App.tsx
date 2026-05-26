@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import SkillsPage from './pages/SkillsPage';
 import ResearchPage from './pages/ResearchPage';
 import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 import ContactPage from './pages/ContactPage';
 import PersonalPage from './pages/PersonalPage';
 import { ROUTES, LEGACY_REDIRECTS } from './site';
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path={ROUTES.skills} element={<SkillsPage />} />
           <Route path={ROUTES.research} element={<ResearchPage />} />
           <Route path={ROUTES.projects} element={<ProjectsPage />} />
+          <Route path={`${ROUTES.projects}/:slug`} element={<ProjectDetailPage />} />
           <Route path={ROUTES.contact} element={<ContactPage />} />
           <Route path={ROUTES.personal} element={<PersonalPage />} />
 

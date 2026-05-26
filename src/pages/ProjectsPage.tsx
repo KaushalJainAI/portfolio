@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Github } from 'lucide-react';
 import { assetLinks } from '../assets/assetLinks';
 import { projects } from '../data/projects';
+import { ROUTES } from '../site';
 import { usePageMeta } from '../usePageMeta';
 
 const ProjectsPage: React.FC = () => {
@@ -41,6 +43,9 @@ const ProjectsPage: React.FC = () => {
                 <h3>{project.title}</h3>
                 <p>{project.summary}</p>
                 <div className="project-links">
+                  <Link to={`${ROUTES.projects}/${project.slug}`} className="project-link">
+                    Details
+                  </Link>
                   {project.githubLink && (
                     <a href={project.githubLink} target="_blank" rel="noreferrer" className="project-link">
                       <Github /> Code
@@ -80,6 +85,9 @@ const ProjectsPage: React.FC = () => {
                 ))}
               </div>
               <div className="project-links">
+                <Link to={`${ROUTES.projects}/${project.slug}`} className="project-link">
+                  Details
+                </Link>
                 {project.githubLink && (
                   <a href={project.githubLink} target="_blank" rel="noreferrer" className="project-link">
                     <Github /> Code

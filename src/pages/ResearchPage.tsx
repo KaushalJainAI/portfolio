@@ -46,6 +46,9 @@ const ResearchPage: React.FC = () => {
                 ))}
               </div>
               <div className="project-links">
+                <Link to={`${ROUTES.projects}/${project.slug}`} className="project-link">
+                  Details
+                </Link>
                 {project.githubLink && (
                   <a href={project.githubLink} target="_blank" rel="noreferrer" className="project-link">
                     <Github /> Code
