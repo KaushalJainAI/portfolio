@@ -139,11 +139,11 @@
     },
     {
       "slug": "battery-rul-prediction",
-      "title": "NASA Battery RUL Prediction",
+      "title": "NASA Battery RUL Prediction (Internship)",
       "category": "internship",
       "status": "Internship work",
       "eyebrow": "Predictive maintenance",
-      "summary": "A predictive-maintenance project for estimating remaining useful life from battery degradation signals.",
+      "summary": "Internship project for predictive maintenance: estimating remaining useful life from battery degradation signals.",
       "why": "RUL prediction matters because the model output maps directly to maintenance decisions, not just prediction accuracy.",
       "impact": "Shows applied ML connected to operational decision-making.",
       "built": [
@@ -156,11 +156,11 @@
     },
     {
       "slug": "firmware-security-platform",
-      "title": "Firmware IP Security Platform",
+      "title": "Firmware IP Security Platform (Internship)",
       "category": "internship",
       "status": "Internship work",
       "eyebrow": "Backend security",
-      "summary": "A Django REST platform for firmware-IP workflows with OTP authentication, role-based access, and secure workflow boundaries.",
+      "summary": "Internship project: a Django REST platform for firmware-IP workflows with OTP authentication, role-based access, and secure workflow boundaries.",
       "why": "This made backend security concrete: authentication, authorization, workflow ownership, and platform trust became first-class design concerns.",
       "impact": "Shows backend/security experience from internship work.",
       "built": [
