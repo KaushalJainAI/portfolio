@@ -152,6 +152,51 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      <section className="section">
+        <div className="section-head">
+          <span className="section-bullet" aria-hidden="true"></span>
+          <h2>Quick proof</h2>
+        </div>
+        <div className="skill-grid">
+          <article className="skill-group">
+            <p className="mini">Shipped</p>
+            <h3>NGU live commerce platform</h3>
+            <p>Storefront, backend, admin panel, Docker, EC2, and real product workflows.</p>
+            <div className="chips">
+              <span className="chip c1">Live</span>
+              <span className="chip c2">Full-stack</span>
+            </div>
+          </article>
+          <article className="skill-group">
+            <p className="mini">AI Systems</p>
+            <h3>AIAAS deployed</h3>
+            <p>Agentic workflow platform with tools, credentials, HITL, streaming, and sandboxing.</p>
+            <div className="chips">
+              <span className="chip c1">Agents</span>
+              <span className="chip c3">Live</span>
+            </div>
+          </article>
+          <article className="skill-group">
+            <p className="mini">DSA</p>
+            <h3>500+ LeetCode problems</h3>
+            <p>Regular Python/C++ practice across arrays, trees, graphs, DP, and search.</p>
+            <div className="chips">
+              <span className="chip c2">500+</span>
+              <span className="chip c1">Problem solving</span>
+            </div>
+          </article>
+          <article className="skill-group">
+            <p className="mini">Beyond code</p>
+            <h3>Battle of Bands winner</h3>
+            <p>1st place at PEC Fest, plus other podium finishes from live performances.</p>
+            <div className="chips">
+              <span className="chip c1">1st place</span>
+              <span className="chip c3">Music</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <div className="personal-nudge">
         <p>There's also a less formal page about life outside code. <Link to={ROUTES.personal}>Have a look</Link></p>
       </div>
