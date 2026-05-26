@@ -16,7 +16,7 @@ const PersonalPage: React.FC = () => {
         <div className="hero-copy">
           <p className="kicker">Beyond the code</p>
           <h1>The <span className="accent-band">person</span> behind the work.</h1>
-          <p className="lead">This page is a little different. It's not about projects or skills — it's about the things that shaped who I am before I ever wrote a line of code. Family, roots, and the quieter parts of my story.</p>
+          <p className="lead">This page is a little different. It is about the things that shaped me before code did: family, roots, music, discipline, and the quieter habits that still influence how I work.</p>
         </div>
         <div className="media-frame media-tall">
           <img src={assetLinks.profile.avatar} alt="Kaushal Jain" className="feature-media" fetchPriority="high" />
@@ -27,8 +27,8 @@ const PersonalPage: React.FC = () => {
         <div className="story-copy">
           <p className="mini">Where I come from</p>
           <h2>I grew up in a middle-class Indian family that values hard work and education.</h2>
-          <p className="story-text">I am from Madhya Pradesh, India. My family is not from a tech background — my parents built their lives through persistence, discipline, and care. Watching that shaped a lot of how I approach my own work.</p>
-          <p className="story-text">Growing up, there was always an emphasis on doing things properly, being honest about what you know and don't know, and treating people with respect. Those values didn't come from a textbook — they came from home.</p>
+          <p className="story-text">I am from Madhya Pradesh, India. My family is not from a technology background; my parents built their lives through persistence, discipline, and care. Watching that shaped how I approach my own work.</p>
+          <p className="story-text">At home, there was always an emphasis on doing things properly, being honest about what you know, and treating people with respect. Those values did not come from a textbook. They came from everyday life.</p>
         </div>
         <div className="story-visual media-frame media-story">
           <img src={assetLinks.personal.indiaLandscape} alt="A warm, atmospheric Indian landscape at sunset." className="feature-media" loading="lazy" decoding="async" />
@@ -42,7 +42,7 @@ const PersonalPage: React.FC = () => {
         <div className="story-copy">
           <p className="mini">Family</p>
           <h2>My family is small, close, and quietly supportive.</h2>
-          <p className="story-text">My parents gave me the freedom to explore my interests without pressure, even when the path I chose — technology, AI, building things — was unfamiliar to them. That trust means a lot to me.</p>
+          <p className="story-text">My parents gave me the freedom to explore my interests without pressure, even when the path I chose, technology and AI, was unfamiliar to them. That trust means a lot to me.</p>
           <p className="story-text">I don't come from privilege or connections. Everything I've built so far has come from curiosity, family support, and a genuine love for building things that work. That's something I carry into every project.</p>
         </div>
       </section>
@@ -51,8 +51,8 @@ const PersonalPage: React.FC = () => {
         <div className="story-copy">
           <p className="mini">The quieter side</p>
           <h2>Some things that matter to me have nothing to do with technology.</h2>
-          <p className="story-text">I care about music — piano especially. I care about food, about cooking for people. I enjoy long walks, good conversations, and the kind of movies that stay with you for weeks. Chess keeps my mind sharp in a different way than code does.</p>
-          <p className="story-text">These keep me from being only an engineer. I'd like to think they make me easier to work with and more curious about things outside my own field.</p>
+          <p className="story-text">I care about music, especially piano. I enjoy cooking for people, long walks, good conversations, and films that stay in your head after they end. Chess keeps my mind sharp in a different way than code does.</p>
+          <p className="story-text">These things keep me from becoming only an engineer. I think they make me more patient, more observant, and more curious about work outside my own field.</p>
         </div>
         <div className="story-visual media-frame media-story">
           <img src={assetLinks.personal.battleOfBands} alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
@@ -67,7 +67,7 @@ const PersonalPage: React.FC = () => {
           <p className="mini">College life</p>
           <h2>PEC Chandigarh gave me more than a degree.</h2>
           <p className="story-text">Beyond academics, college taught me how to manage my time, work with all kinds of people, and handle the pressure of balancing competitions, projects, and personal growth at the same time.</p>
-          <p className="story-text">Some of my best memories are from late-night jam sessions in the music room, hackathon weekends, and long campus walks that turned into deep conversations. That environment shaped a lot of who I am today.</p>
+          <p className="story-text">Some of my best memories are from late-night jam sessions in the music room, hackathon weekends, and long campus walks that turned into deep conversations. That environment shaped who I am today.</p>
         </div>
       </section>
 
@@ -80,7 +80,7 @@ const PersonalPage: React.FC = () => {
           <article className="skill-group">
             <p className="mini">Food</p>
             <h3>I'm a decent cook</h3>
-            <p>I enjoy making food for people. There's something satisfying about the process — choosing ingredients, timing things right, and seeing someone enjoy what you've made. It's a lot like building software, honestly.</p>
+            <p>I enjoy making food for people. There is something satisfying about the process: choosing ingredients, timing things right, and seeing someone enjoy what you made. It feels surprisingly close to building software.</p>
           </article>
           <article className="skill-group">
             <p className="mini">Music</p>

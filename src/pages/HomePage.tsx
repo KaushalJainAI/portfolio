@@ -55,7 +55,7 @@ const Typer: React.FC = () => {
 const HomePage: React.FC = () => {
   usePageMeta(
     'Home',
-    'Kaushal Jain - backend and AI engineer building production-ready APIs, ML pipelines, and full-stack tools.'
+    'Kaushal Jain - backend and AI engineer building production-ready APIs, applied ML systems, and full-stack products.'
   );
 
   return (
@@ -63,8 +63,8 @@ const HomePage: React.FC = () => {
       <section className="hero hero-inline">
         <div className="hero-copy">
           <p className="kicker">Backend + AI Engineering</p>
-          <h1>Building <span className="accent-band">backend and AI tools</span> that ship.</h1>
-          <p className="lead">I'm Kaushal Jain, a Computer Science student at PEC Chandigarh focused on Django/FastAPI APIs, ML pipelines, and deployed full-stack products people can actually use.</p>
+          <h1>Building <span className="accent-band">reliable backend and AI systems</span> that ship.</h1>
+          <p className="lead">I'm Kaushal Jain, a Computer Science student at PEC Chandigarh who likes turning complex ideas into clean APIs, useful ML workflows, and full-stack products people can actually use.</p>
           <Typer />
           <div className="actions">
             <Link className="btn primary" to={ROUTES.projects}>View Projects</Link>
@@ -88,15 +88,15 @@ const HomePage: React.FC = () => {
         <div className="story-cards">
           <Link className="story-card" to={ROUTES.about}>
             <p className="mini">About</p>
-            <h3>Background, education, and how I got here.</h3>
-            <p>My timeline so far - coursework at PEC, the Statcon internship, and the engineering habits behind my work.</p>
+            <h3>The story behind the work.</h3>
+            <p>My path through PEC, backend engineering, applied AI, internship work, and the habits that shape how I build.</p>
             <span className="btn">Open About</span>
           </Link>
 
           <Link className="story-card" to={ROUTES.projects}>
             <p className="mini">Projects</p>
-            <h3>Proof of work across AI and backend.</h3>
-            <p>Deployed e-commerce, agentic AI, battery RUL modeling, and secure Django APIs - with screenshots, stack details, and outcomes.</p>
+            <h3>Proof of work across AI, backend, and product.</h3>
+            <p>Deployed e-commerce, agentic AI, battery RUL modeling, and secure Django APIs with stack details, outcomes, and implementation notes.</p>
             <span className="btn">View Projects</span>
           </Link>
 
@@ -123,8 +123,8 @@ const HomePage: React.FC = () => {
             Open to Work
           </div>
           <p className="mini">Availability</p>
-          <h2>I'm looking for backend, AI, and full-stack roles.</h2>
-          <p className="story-text">I'm open to full-time roles and internships where I can build APIs, ML-backed systems, developer tools, or full-stack products with real users.</p>
+          <h2>I'm open to backend, applied AI, and full-stack roles.</h2>
+          <p className="story-text">I'm looking for teams where I can contribute to production APIs, ML-backed features, developer tools, or full-stack products with real users and clear engineering standards.</p>
           <p className="story-text">If you're hiring for backend, applied AI, or full-stack engineering, the contact page has the fastest ways to reach me.</p>
           <div className="actions">
             <Link className="btn primary" to={ROUTES.contact}>Discuss a Role</Link>
