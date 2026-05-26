@@ -224,7 +224,7 @@ const SkillsPage: React.FC = () => {
           </div>
         </div>
         <div className="story-visual media-frame media-story" style={{ maxWidth: '29rem' }}>
-          <img src={assetLinks.profile.heroWorkspace} alt="A professional dual-monitor setup with one screen showing a modern code editor and the other displaying Kaushal Jain's GitHub profile, complete with a mechanical keyboard and sleek desk." className="feature-media" loading="lazy" decoding="async" />
+          <img src={assetLinks.profile.githubStats} alt="Kaushal Jain GitHub profile stats card showing repository activity and contribution indicators." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 

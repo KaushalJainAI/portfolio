@@ -18,6 +18,7 @@ export const assetLinks = {
     heroWorkspace: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817983/portfolio/svg/dev-workspace.svg",
     teamCollab: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779818022/portfolio/svg/team-collab.svg",
     contactHero: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817978/portfolio/svg/contact-hero.svg",
+    githubStats: "https://github-readme-stats.vercel.app/api?username=KaushalJainAI&show_icons=true&hide_border=true&title_color=0f766e&icon_color=0f766e&text_color=27221f&bg_color=f7f2e8",
   },
 
   // Skills & Tech (SVG)
