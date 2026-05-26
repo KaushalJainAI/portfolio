@@ -16,7 +16,12 @@
       ],
       "tech": ["Django REST", "React", "TypeScript", "Redis", "PostgreSQL", "Docker", "EC2", "S3"],
       "liveLink": "https://nidhimasala.com",
-      "githubLink": null
+      "githubLink": "https://github.com/KaushalJainAI/nidhi-brand-forge",
+      "codeLinks": [
+        { "label": "Frontend", "url": "https://github.com/KaushalJainAI/nidhi-brand-forge" },
+        { "label": "Backend", "url": "https://github.com/KaushalJainAI/NGU_Backend" },
+        { "label": "Admin Panel", "url": "https://github.com/KaushalJainAI/e-commerce-command-center" }
+      ]
     },
     {
       "slug": "aiaas",
@@ -34,7 +39,11 @@
       ],
       "tech": ["Django", "ReactFlow", "LangGraph", "MCP", "Channels", "Celery", "Redis", "Docker"],
       "liveLink": "https://aiaas.kaushaljain.com",
-      "githubLink": null
+      "githubLink": "https://github.com/KaushalJainAI/workflow_assistant",
+      "codeLinks": [
+        { "label": "Frontend", "url": "https://github.com/KaushalJainAI/workflow_assistant" },
+        { "label": "Backend", "url": "https://github.com/KaushalJainAI/AIAAS_Backend" }
+      ]
     },
     {
       "slug": "faultline",
@@ -88,7 +97,10 @@
       ],
       "tech": ["Django REST", "React", "Vite", "JWT", "KNN", "Hybrid Recommender", "RAG"],
       "liveLink": null,
-      "githubLink": null
+      "githubLink": "https://github.com/KaushalJainAI/FitGenius",
+      "codeLinks": [
+        { "label": "Repository", "url": "https://github.com/KaushalJainAI/FitGenius" }
+      ]
     },
     {
       "slug": "postgres-ec2",

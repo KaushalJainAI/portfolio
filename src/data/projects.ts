@@ -15,6 +15,10 @@ export type PortfolioProject = {
   tech: string[];
   liveLink?: string | null;
   githubLink?: string | null;
+  codeLinks?: Array<{
+    label: string;
+    url: string;
+  }>;
 };
 
 export const projects = projectData.projects as PortfolioProject[];

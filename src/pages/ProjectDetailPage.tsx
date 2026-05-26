@@ -32,12 +32,12 @@ const ProjectDetailPage: React.FC = () => {
                 Live Link
               </a>
             )}
-            {project.githubLink && (
-              <a className="btn" href={project.githubLink} target="_blank" rel="noreferrer">
+            {(project.codeLinks?.length ? project.codeLinks : project.githubLink ? [{ label: 'Code', url: project.githubLink }] : []).map(link => (
+              <a className="btn" href={link.url} target="_blank" rel="noreferrer" key={link.url}>
                 <Github size={18} style={{ marginRight: '0.4rem' }} />
-                Code
+                {link.label}
               </a>
-            )}
+            ))}
             <Link className="btn" to={ROUTES.projects}>All Projects</Link>
           </div>
         </div>
@@ -59,7 +59,7 @@ const ProjectDetailPage: React.FC = () => {
           </div>
           <div>
             <p className="mini">Links</p>
-            <p>{project.liveLink ? 'Live project available.' : 'No public live link.'} {project.githubLink ? 'Code link available.' : 'Code is not public yet.'}</p>
+            <p>{project.liveLink ? 'Live project available.' : 'No public live link.'} {project.githubLink || project.codeLinks?.length ? 'Code link available.' : 'Code is not public yet.'}</p>
           </div>
         </div>
       </section>
