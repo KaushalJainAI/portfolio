@@ -25,6 +25,7 @@ export const assetLinks = {
   skills: {
     heroCollage: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779818011/portfolio/svg/skills-collage.svg",
     techStack: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779818033/portfolio/svg/tech-stack.svg",
+    infraFlow: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779822907/portfolio/svg/infra-flow.svg",
   },
 
   // Personal & Hobbies
@@ -39,6 +40,7 @@ export const assetLinks = {
     indiaLandscape: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817996/portfolio/svg/india-landscape.svg",
     indianFood: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779818004/portfolio/svg/indian-food.svg",
     warmConversation: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779818038/portfolio/svg/warm-conversation.svg",
+    quietSide: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779823972/portfolio/svg/quiet-side.svg",
   },
 
   // Decorative SVG accents (available for use across pages)

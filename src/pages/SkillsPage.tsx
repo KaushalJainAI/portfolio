@@ -203,13 +203,20 @@ const SkillsPage: React.FC = () => {
 
       <section className="story-block story-block-reverse section">
         <div className="story-visual media-frame media-story" style={{ maxWidth: '80%', margin: '0 auto' }}>
-          <img src={assetLinks.skills.techStack} alt="A professional 3D visualization showing a developer's holistic thinking process: system planning, UI/UX design, CI/CD pipelines, documentation, and scalability." className="feature-media" loading="lazy" decoding="async" />
+          <img src={assetLinks.skills.infraFlow} alt="Infrastructure deployment flow: Docker builds containers, DockerHub stores images, and AWS runs them — all inside an agile CI/CD iteration loop." className="feature-media" loading="lazy" decoding="async" />
         </div>
         <div className="story-copy">
           <p className="mini">How I approach a project</p>
           <h2>Plan, build, ship, iterate.</h2>
-          <p className="story-text">I usually start with a short design doc, build the core path first, then layer on the frontend and deployment once the hard part works.</p>
-          <p className="story-text">From there it's the usual loop — CI/CD for safe releases, an eye on cost and scaling, and keeping whoever I'm building for in the loop on trade-offs.</p>
+          <p className="story-text">I usually start with a short design doc, build the core path first, then containerize with Docker, push the image to DockerHub, and deploy to AWS once the hard part works.</p>
+          <p className="story-text">From there it's the agile loop — CI/CD for safe releases, an eye on cost and scaling, and keeping whoever I'm building for in the loop on trade-offs.</p>
+          <div className="chips">
+            <span className="chip c1">Docker</span>
+            <span className="chip c2">DockerHub</span>
+            <span className="chip c3">AWS</span>
+            <span className="chip c1">CI / CD</span>
+            <span className="chip c2">Agile</span>
+          </div>
         </div>
       </section>
 

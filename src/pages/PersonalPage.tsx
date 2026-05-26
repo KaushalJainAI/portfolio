@@ -55,7 +55,7 @@ const PersonalPage: React.FC = () => {
           <p className="story-text">These things keep me from becoming only an engineer. I think they make me more patient, more observant, and more curious about work outside my own field.</p>
         </div>
         <div className="story-visual media-frame media-story">
-          <img src={assetLinks.personal.battleOfBands} alt="Kaushal Jain performing piano on stage." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
+          <img src={assetLinks.personal.quietSide} alt="A quiet-side flat-lay: piano keys, chess pieces, an open book, coffee, headphones, and a film strip." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
         </div>
       </section>
 
