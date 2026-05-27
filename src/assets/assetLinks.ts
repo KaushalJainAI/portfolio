@@ -8,6 +8,7 @@ export const assetLinks = {
     nasaBatteryRul: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817951/portfolio/svg/battery-rul.svg",
     firmwareSecurity: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817990/portfolio/svg/firmware-security.svg",
     aiResearchFlow: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817941/portfolio/svg/ai-research-flow.svg",
+    shippedProducts: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779859288/portfolio/svg/shipped-products.svg",
   },
 
   // General Assets

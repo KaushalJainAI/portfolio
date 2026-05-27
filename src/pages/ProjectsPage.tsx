@@ -24,7 +24,7 @@ const ProjectsPage: React.FC = () => {
           <p className="lead">A concise view of the strongest work: deployed commerce, agentic automation, QA/security tooling, recommendation systems, and cloud infrastructure.</p>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.projects.aiResearchFlow} alt="AI workflow interface representing retrieval, agent orchestration, and applied AI product flows." className="feature-media" fetchPriority="high" />
+          <img src={assetLinks.projects.shippedProducts} alt="Composition of shipped products: a commerce/operations dashboard, a mobile app, and a deploy terminal — with Commerce, Agents, Security, and Infra tags." className="feature-media" fetchPriority="high" />
         </div>
       </section>
 
