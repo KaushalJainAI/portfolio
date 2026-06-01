@@ -210,7 +210,7 @@
         "Medical safety triage, deterministic post-filtering, feedback loops, and a contextual RAG help chat."
       ],
       "tech": ["Django REST", "React", "Vite", "JWT", "KNN", "Hybrid Recommender", "RAG"],
-      "liveLink": null,
+      "liveLink": "https://fitgenius.kaushaljain.com",
       "githubLink": "https://github.com/KaushalJainAI/FitGenius",
       "codeLinks": [
         { "label": "Repository", "url": "https://github.com/KaushalJainAI/FitGenius" }
