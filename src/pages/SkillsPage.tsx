@@ -4,6 +4,45 @@ import { assetLinks } from '../assets/assetLinks';
 import { ROUTES } from '../site';
 import { usePageMeta } from '../usePageMeta';
 
+const GithubStatsPanel: React.FC = () => (
+  <a
+    className="github-stats-panel"
+    href="https://github.com/KaushalJainAI"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Open Kaushal Jain GitHub profile"
+  >
+    <div className="github-stats-topline">
+      <span>KaushalJainAI</span>
+      <span>GitHub</span>
+    </div>
+    <div className="github-stats-mark" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div className="github-stats-main">
+      <strong>Code, experiments, and shipped builds</strong>
+      <p>Backend systems, applied AI, full-stack apps, and infrastructure projects.</p>
+    </div>
+    <div className="github-stats-grid">
+      <span>
+        <strong>AI</strong>
+        <small>Agents + RAG</small>
+      </span>
+      <span>
+        <strong>API</strong>
+        <small>Django REST</small>
+      </span>
+      <span>
+        <strong>Ops</strong>
+        <small>Docker + AWS</small>
+      </span>
+    </div>
+  </a>
+);
+
 const SkillsPage: React.FC = () => {
   usePageMeta(
     'Skills',
@@ -230,8 +269,8 @@ const SkillsPage: React.FC = () => {
             <a className="btn primary" href="https://github.com/KaushalJainAI" target="_blank" rel="noreferrer">Visit GitHub</a>
           </div>
         </div>
-        <div className="story-visual media-frame media-story" style={{ maxWidth: '29rem' }}>
-          <img src={assetLinks.profile.githubStats} alt="Kaushal Jain GitHub profile stats card showing repository activity and contribution indicators." className="feature-media feature-media-fit" loading="lazy" decoding="async" />
+        <div className="story-visual" style={{ maxWidth: '29rem' }}>
+          <GithubStatsPanel />
         </div>
       </section>
 

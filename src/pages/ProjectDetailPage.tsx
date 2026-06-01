@@ -4,6 +4,9 @@ import { ExternalLink, Github } from 'lucide-react';
 import { allProjects } from '../data/projects';
 import { ROUTES } from '../site';
 import { usePageMeta } from '../usePageMeta';
+import ArchitectureDiagram from '../components/ArchitectureDiagram';
+import ProjectStats from '../components/ProjectStats';
+import { Check } from 'lucide-react';
 
 const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -42,6 +45,27 @@ const ProjectDetailPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ProjectStats project={project} />
+
+      {project.highlights?.length ? (
+        <section className="section">
+          <div className="section-head">
+            <span className="section-bullet" aria-hidden="true"></span>
+            <h2>Why it stands out</h2>
+          </div>
+          <ul className="highlight-list">
+            {project.highlights.map(point => (
+              <li className="highlight" key={point}>
+                <span className="highlight-icon" aria-hidden="true">
+                  <Check size={16} strokeWidth={2.4} />
+                </span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="section">
         <div className="case-study-grid">
@@ -82,6 +106,16 @@ const ProjectDetailPage: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {project.architecture && (
+        <section className="section">
+          <div className="section-head">
+            <span className="section-bullet" aria-hidden="true"></span>
+            <h2>Core architecture</h2>
+          </div>
+          <ArchitectureDiagram architecture={project.architecture} />
+        </section>
+      )}
 
       <section className="section">
         <div className="section-head">

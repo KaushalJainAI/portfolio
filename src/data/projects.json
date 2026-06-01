@@ -21,7 +21,35 @@
         { "label": "Frontend", "url": "https://github.com/KaushalJainAI/nidhi-brand-forge" },
         { "label": "Backend", "url": "https://github.com/KaushalJainAI/NGU_Backend" },
         { "label": "Admin Panel", "url": "https://github.com/KaushalJainAI/e-commerce-command-center" }
-      ]
+      ],
+      "highlights": [
+        "Production-deployed for a real spice brand — a live business, not a demo.",
+        "End-to-end ownership: storefront, admin panel, REST API, deployment and infra.",
+        "Three independent services with strict public / authenticated / admin permission tiers.",
+        "Redis caching and S3 media offload keep the app stateless, fast and horizontally scalable."
+      ],
+      "architecture": {
+        "caption": "A classic three-tier commerce system: separate React clients for shoppers and admins, an nginx-fronted Django REST API enforcing permission boundaries, with Redis and S3 offloading hot reads and media away from PostgreSQL.",
+        "tiers": [
+          { "label": "Clients", "nodes": ["Customer storefront (React/TS)", "Admin command center"] },
+          { "label": "Edge", "nodes": ["nginx reverse proxy", "Docker on EC2"] },
+          { "label": "API", "nodes": ["Django REST — public", "Authenticated", "Admin-only scopes"] },
+          { "label": "Caching & chat", "nodes": ["Redis cache", "Support chat"] },
+          { "label": "Persistence", "nodes": ["PostgreSQL", "S3 media"] }
+        ],
+        "patterns": [
+          { "name": "Layered three-tier separation", "detail": "Client, API and data tiers deploy and scale independently behind nginx." },
+          { "name": "Role-scoped permission classes", "detail": "DRF permission boundaries split public, authenticated and admin-only surfaces." },
+          { "name": "Cache-aside with Redis", "detail": "Hot catalogue and session reads are served from Redis before hitting PostgreSQL." },
+          { "name": "Externalised object storage", "detail": "Product media lives in S3, keeping app containers stateless." }
+        ],
+        "scalability": [
+          "Stateless Django containers scale horizontally behind nginx; S3 and Redis hold the state.",
+          "Redis cache-aside absorbs read-heavy catalogue traffic and shields the database.",
+          "Media is served from S3 (CDN-ready) instead of app servers, freeing app CPU and bandwidth.",
+          "Docker images make adding EC2 capacity or moving to an orchestrator a repeatable step."
+        ]
+      }
     },
     {
       "slug": "aiaas",
@@ -43,7 +71,37 @@
       "codeLinks": [
         { "label": "Frontend", "url": "https://github.com/KaushalJainAI/workflow_assistant" },
         { "label": "Backend", "url": "https://github.com/KaushalJainAI/AIAAS_Backend" }
-      ]
+      ],
+      "highlights": [
+        "Makes AI automation programmable and inspectable — safer than a chat window.",
+        "Defence-in-depth code execution: fast AST filtering plus a WASM/WASI sandbox with memory & CPU limits.",
+        "Human-in-the-loop approval gates on sensitive actions before they run.",
+        "Real-time streaming orchestration with LangGraph and a supervising King Agent."
+      ],
+      "architecture": {
+        "caption": "A visual workflow editor compiles graphs that a LangGraph engine executes under King-Agent supervision, streaming over Channels, with tool calls and untrusted code confined to a sandbox and credentials injected only at run time.",
+        "tiers": [
+          { "label": "Editor", "nodes": ["ReactFlow workflow canvas"] },
+          { "label": "Realtime", "nodes": ["Django Channels (WebSocket streaming)"] },
+          { "label": "Orchestration", "nodes": ["LangGraph engine", "King Agent supervisor", "HITL approval gates"] },
+          { "label": "Tools & nodes", "nodes": ["LLM", "HTTP", "MCP", "Logic"] },
+          { "label": "Execution", "nodes": ["AST static filter", "WASM/WASI sandbox"] },
+          { "label": "Infra & secrets", "nodes": ["Celery", "Redis", "Encrypted credentials", "Docker"] }
+        ],
+        "patterns": [
+          { "name": "Supervisor / orchestrator-worker", "detail": "The King Agent supervises specialist nodes as a LangGraph state machine." },
+          { "name": "Plugin tool registry", "detail": "LLM, HTTP, MCP and logic nodes implement a common node contract for hot-swapping." },
+          { "name": "Defence-in-depth sandbox", "detail": "Fast AST filtering rejects code before a WASM/WASI runtime caps memory and CPU." },
+          { "name": "Just-in-time credential injection", "detail": "Secrets stay encrypted at rest and are decrypted only into the executing node." },
+          { "name": "Human-in-the-loop gate", "detail": "Sensitive actions pause the graph for explicit approval before resuming." }
+        ],
+        "scalability": [
+          "Celery workers run executions off the request path, so concurrent workflows scale by adding workers.",
+          "Redis backs both Channels fan-out and the Celery broker, decoupling producers from consumers.",
+          "Each node executes independently, allowing long-running graphs without blocking the API.",
+          "Sandboxed execution is per-run and disposable, so untrusted workloads scale without shared state."
+        ]
+      }
     },
     {
       "slug": "faultline",
@@ -61,7 +119,35 @@
       ],
       "tech": ["Python", "Django", "LangGraph", "FAISS", "Pytest", "AST", "HTTPX"],
       "liveLink": null,
-      "githubLink": "https://github.com/KaushalJainAI/Faultline"
+      "githubLink": "https://github.com/KaushalJainAI/Faultline",
+      "highlights": [
+        "Attacks your own software before users or attackers do.",
+        "Deterministic checks first, agentic probing second — cheap before expensive.",
+        "FAISS-grounded reasoning over the real codebase, not guesswork.",
+        "Generates tests, correlates logs, reports vulnerabilities and proposes patches."
+      ],
+      "architecture": {
+        "caption": "A control plane that runs cheap deterministic checks first, then escalates to a LangGraph agent for API and security probing — keeping a human in the loop and indexing the codebase with FAISS for grounded reasoning.",
+        "tiers": [
+          { "label": "Interface", "nodes": ["Interactive CLI (streamed reasoning + HITL)"] },
+          { "label": "Deterministic pass", "nodes": ["Syntax / imports", "Pytest collection", "Dependency root-cause", "FAISS semantic index"] },
+          { "label": "Agent pass", "nodes": ["LangGraph agent"] },
+          { "label": "Probes", "nodes": ["API test generation", "Log correlation", "Vulnerability reports", "Patch proposals"] },
+          { "label": "Target", "nodes": ["Project code", "Live APIs", "Logs"] }
+        ],
+        "patterns": [
+          { "name": "Deterministic-then-agentic pipeline", "detail": "Cheap static checks run before any LLM call, so the agent only handles what rules can't." },
+          { "name": "Retrieval-augmented reasoning", "detail": "A FAISS semantic index grounds the agent in the actual codebase instead of guessing." },
+          { "name": "Tool-using agent loop", "detail": "The agent plans, calls probing tools, and folds findings back into its next step." },
+          { "name": "Human-in-the-loop approval", "detail": "Generated files and risky actions surface as CLI prompts before they apply." }
+        ],
+        "scalability": [
+          "The deterministic pass short-circuits most issues, minimising expensive LLM calls per run.",
+          "FAISS indexing keeps retrieval fast as the target codebase grows.",
+          "Stateless per-run analysis means many projects can be scanned independently.",
+          "Tool calls are isolated, so new probes plug in without reworking the agent core."
+        ]
+      }
     },
     {
       "slug": "career-navigator",
@@ -79,7 +165,35 @@
       ],
       "tech": ["Django", "React", "Zustand", "Channels", "Celery", "LangGraph", "PostgreSQL"],
       "liveLink": null,
-      "githubLink": "https://github.com/KaushalJainAI/Career_Navigator"
+      "githubLink": "https://github.com/KaushalJainAI/Career_Navigator",
+      "highlights": [
+        "Keeps the candidate in control of an agent-assisted job hunt.",
+        "12 modular Django domain apps spanning the full discover → apply → prepare loop.",
+        "Interview Grill agent: company research, tailored question banks and live grilling rounds.",
+        "Human approval gates guard irreversible actions like auto-apply."
+      ],
+      "architecture": {
+        "caption": "A candidate-owned job agent: a React/Zustand client over modular Django domain apps, with LangGraph agents handling matching, tailoring and interview prep, Celery doing the heavy lifting, and HITL gates guarding irreversible actions like auto-apply.",
+        "tiers": [
+          { "label": "Client", "nodes": ["React", "Zustand store"] },
+          { "label": "Realtime", "nodes": ["Django Channels streaming"] },
+          { "label": "Domain apps", "nodes": ["Profiles", "Resumes", "Jobs / ingestion", "Matching", "Applications", "Notifications"] },
+          { "label": "Agents", "nodes": ["Interview Grill", "Tailoring", "Auto-apply (HITL gate)"] },
+          { "label": "Async & data", "nodes": ["Celery", "PostgreSQL"] }
+        ],
+        "patterns": [
+          { "name": "Modular domain apps", "detail": "Each concern (profiles, resumes, matching, interview…) is an isolated Django app with clear boundaries." },
+          { "name": "Resume-to-JD scoring", "detail": "Structured matching ranks roles against the candidate profile before tailoring." },
+          { "name": "Agent + HITL approval gate", "detail": "Irreversible steps such as auto-apply require explicit human confirmation." },
+          { "name": "Event-streamed UX", "detail": "Channels push live agent progress to the client instead of polling." }
+        ],
+        "scalability": [
+          "Celery offloads ingestion, scoring and tailoring so the request path stays responsive.",
+          "Domain apps are independently extensible, letting new stages join the loop without coupling.",
+          "Streaming over Channels avoids polling overhead as concurrent sessions grow.",
+          "PostgreSQL-backed job ingestion can scale crawl volume behind the queue."
+        ]
+      }
     },
     {
       "slug": "fitgenius",
@@ -100,7 +214,36 @@
       "githubLink": "https://github.com/KaushalJainAI/FitGenius",
       "codeLinks": [
         { "label": "Repository", "url": "https://github.com/KaushalJainAI/FitGenius" }
-      ]
+      ],
+      "highlights": [
+        "Safety rules can override the recommender — health constraints beat ranking.",
+        "Hybrid recommender fusing templates, KNN signals and collaborative priors.",
+        "Separates long-term health profile from volatile daily readiness check-ins.",
+        "Contextual RAG help chat grounded in the user's own plan and data."
+      ],
+      "architecture": {
+        "caption": "A safety-aware recommender that separates stable health profiles from daily check-ins, blends multiple ranking signals into a hybrid recommender, then lets deterministic medical-safety rules override ranking before a plan reaches the user.",
+        "tiers": [
+          { "label": "Client", "nodes": ["React", "Vite"] },
+          { "label": "API & auth", "nodes": ["Django REST", "JWT"] },
+          { "label": "Inputs", "nodes": ["Health profile (stable)", "Daily check-in (readiness)"] },
+          { "label": "Hybrid recommender", "nodes": ["Templates", "KNN signals", "Collaborative priors", "Reranking"] },
+          { "label": "Safety layer", "nodes": ["Medical triage", "Deterministic post-filter"] },
+          { "label": "Feedback & help", "nodes": ["Feedback loop", "RAG help chat"] }
+        ],
+        "patterns": [
+          { "name": "Hybrid recommender", "detail": "Templates, KNN and collaborative priors combine, then a reranker orders candidates." },
+          { "name": "Safety-overrides-ranking", "detail": "Deterministic medical post-filters can veto any recommendation the ranker produced." },
+          { "name": "Profile / readiness split", "detail": "Long-term health data is modelled separately from volatile daily check-ins." },
+          { "name": "Contextual RAG assistant", "detail": "The help chat retrieves user context to answer grounded, plan-specific questions." }
+        ],
+        "scalability": [
+          "Candidates are generated then reranked, so new signals attach as pluggable stages.",
+          "Deterministic post-filters are cheap and run after ranking, keeping the safety layer fast.",
+          "Stateless JWT auth lets the API scale horizontally without server-side sessions.",
+          "Preference memory and feedback are stored per user, so personalisation grows without retraining the core."
+        ]
+      }
     },
     {
       "slug": "postgres-ec2",
@@ -118,7 +261,35 @@
       ],
       "tech": ["PostgreSQL", "Docker", "PgBouncer", "EC2", "Bash"],
       "liveLink": null,
-      "githubLink": "https://github.com/KaushalJainAI/postgress_instance"
+      "githubLink": "https://github.com/KaushalJainAI/postgress_instance",
+      "highlights": [
+        "Reproducible database infrastructure — provisioned, not hand-built.",
+        "PgBouncer connection pooling lets many app instances share bounded connections.",
+        "One-command deploy, backup and restore runbooks for safe operations.",
+        "Versioned custom image shipped via Docker Hub to EC2."
+      ],
+      "architecture": {
+        "caption": "Reusable database infrastructure: a custom PostgreSQL 16 image shipped via Docker Hub to EC2, fronted by PgBouncer for connection pooling, with scripts turning provisioning, backups and restores into repeatable operations.",
+        "tiers": [
+          { "label": "Apps connect via", "nodes": ["PgBouncer pool (6432)"] },
+          { "label": "Database", "nodes": ["PostgreSQL 16 (5432, direct)"] },
+          { "label": "Image & config", "nodes": ["Custom image", "Tuned config", "Init scripts", "App roles"] },
+          { "label": "Ops scripts", "nodes": ["Build / push", "Deploy", "Backup", "Restore", "Health check"] },
+          { "label": "Distribution", "nodes": ["Docker Hub", "EC2"] }
+        ],
+        "patterns": [
+          { "name": "Connection pooling", "detail": "PgBouncer on 6432 multiplexes client connections, sparing PostgreSQL backend processes." },
+          { "name": "Infrastructure-as-code image", "detail": "A versioned custom image plus Compose files make the server reproducible, not hand-built." },
+          { "name": "Idempotent provisioning scripts", "detail": "Project-database and role creation are scripted so environments come up identically." },
+          { "name": "Backup / restore runbook", "detail": "Scripted backups and restores turn recovery into a known, tested operation." }
+        ],
+        "scalability": [
+          "PgBouncer pooling lets many app instances share a bounded set of database connections.",
+          "Tuned config plus a separate direct 5432 path supports heavier admin or migration workloads.",
+          "Docker Hub distribution makes standing up a new database host a single pull-and-run.",
+          "Scripted backups/restores underpin scaling out to replicas or larger instances safely."
+        ]
+      }
     },
     {
       "slug": "agentic-ai-telegram-bot",
@@ -135,7 +306,30 @@
       ],
       "tech": ["Python", "LangGraph", "Telegram Bot", "SQL Tools", "Retrieval"],
       "liveLink": null,
-      "githubLink": "https://github.com/KaushalJainAI/Agentic-AI"
+      "githubLink": "https://github.com/KaushalJainAI/Agentic-AI",
+      "highlights": [
+        "The proving ground whose patterns seeded AIAAS, Faultline and Career Navigator.",
+        "Multi-agent supervisor that routes each request to the right specialist tool.",
+        "Grounded, retrieval-style answers over web scraping and SQL sources."
+      ],
+      "architecture": {
+        "caption": "An early tool-using agent: a Telegram front end drives a LangGraph multi-agent loop that selects specialist tools — web retrieval, SQL querying and local services — to answer knowledge-base style questions.",
+        "tiers": [
+          { "label": "Interface", "nodes": ["Telegram bot"] },
+          { "label": "Agent loop", "nodes": ["LangGraph multi-agent supervisor"] },
+          { "label": "Tools", "nodes": ["Web scraping", "SQL querying", "Local service", "Retrieval"] }
+        ],
+        "patterns": [
+          { "name": "Multi-agent supervisor", "detail": "A coordinating loop routes each request to the right specialist tool." },
+          { "name": "Tool abstraction", "detail": "Web, SQL and local-service tools share a uniform interface the agent can call." },
+          { "name": "Retrieval-style responses", "detail": "Answers are grounded in fetched or queried data rather than the model alone." }
+        ],
+        "scalability": [
+          "New capabilities are added as tools without changing the agent loop.",
+          "Stateless per-message handling lets the bot serve many chats concurrently.",
+          "This tool-use pattern later scaled into AIAAS, Faultline and Career Navigator."
+        ]
+      }
     },
     {
       "slug": "battery-rul-prediction",
@@ -152,7 +346,31 @@
       ],
       "tech": ["Machine Learning", "Time Series", "Regression", "Predictive Maintenance"],
       "liveLink": null,
-      "githubLink": null
+      "githubLink": null,
+      "highlights": [
+        "Model output maps directly to maintenance decisions, not just accuracy.",
+        "End-to-end pipeline from raw battery cycles to remaining-useful-life estimates.",
+        "Applied ML framed around real operational impact."
+      ],
+      "architecture": {
+        "caption": "A predictive-maintenance pipeline: battery-cycle degradation signals are turned into time-series features, fed to a regression model estimating remaining useful life, with output framed as a maintenance decision rather than a raw score.",
+        "tiers": [
+          { "label": "Data", "nodes": ["Battery cycles", "Degradation signals"] },
+          { "label": "Features", "nodes": ["Time-series feature extraction"] },
+          { "label": "Model", "nodes": ["Regression RUL estimator"] },
+          { "label": "Decision", "nodes": ["Predictive-maintenance output"] }
+        ],
+        "patterns": [
+          { "name": "Feature-extraction pipeline", "detail": "Raw cycle telemetry is transformed into degradation features before modelling." },
+          { "name": "Regression for RUL", "detail": "Remaining useful life is predicted as a continuous target, not a class." },
+          { "name": "Decision-oriented framing", "detail": "Model output maps to maintenance actions, aligning the metric with operations." }
+        ],
+        "scalability": [
+          "The extraction → model → decision pipeline generalises to other degradation datasets.",
+          "Batch feature extraction scales offline across many battery cells.",
+          "Decision framing makes the output directly consumable by maintenance scheduling."
+        ]
+      }
     },
     {
       "slug": "firmware-security-platform",
@@ -169,7 +387,31 @@
       ],
       "tech": ["Django REST", "OTP Auth", "RBAC", "Security Workflows"],
       "liveLink": null,
-      "githubLink": null
+      "githubLink": null,
+      "highlights": [
+        "Treats backend security as a first-class design concern.",
+        "OTP authentication plus centralised role-based access control.",
+        "Workflow ownership boundaries around sensitive firmware-IP processes."
+      ],
+      "architecture": {
+        "caption": "A backend-security platform where OTP authentication and role-based access gate a Django REST API, enforcing workflow ownership boundaries around sensitive firmware-IP processes.",
+        "tiers": [
+          { "label": "Access", "nodes": ["OTP authentication"] },
+          { "label": "Authorization", "nodes": ["Role-based access (RBAC)"] },
+          { "label": "API", "nodes": ["Django REST secure endpoints"] },
+          { "label": "Workflows", "nodes": ["Firmware / IP workflow boundaries"] }
+        ],
+        "patterns": [
+          { "name": "OTP authentication flow", "detail": "One-time passcodes establish identity before any protected action." },
+          { "name": "Role-based access control", "detail": "Permissions are granted by role, keeping authorization centralised and auditable." },
+          { "name": "Workflow ownership boundaries", "detail": "Each firmware/IP process enforces who may act, making trust a first-class design concern." }
+        ],
+        "scalability": [
+          "Centralised RBAC lets new roles and endpoints be added without bespoke checks.",
+          "Stateless REST endpoints scale horizontally behind the auth layer.",
+          "Workflow boundaries keep additional firmware/IP processes isolated as the platform grows."
+        ]
+      }
     }
   ],
   "researchProjects": [
@@ -189,7 +431,37 @@
       ],
       "tech": ["PyTorch", "Computer Vision", "3D CNN", "U-Net", "TimeSformer", "Kaggle"],
       "liveLink": null,
-      "githubLink": "https://github.com/KaushalJainAI/vesuvius"
+      "githubLink": "https://github.com/KaushalJainAI/vesuvius",
+      "highlights": [
+        "Tackles a genuine open research problem: reading unopened ancient scrolls.",
+        "Progressive model ladder: SegmentInkNet baseline → U-Net V2 → TimeSformer.",
+        "Disciplined handling of huge CT volumes and noisy pseudo-labels.",
+        "Bridges deep learning with classical CV for letter reconstruction."
+      ],
+      "architecture": {
+        "caption": "A computer-vision research pipeline that detects ink in CT surface-volume slices using progressively stronger models, then post-processes activations into letter candidates matched against Greek templates.",
+        "tiers": [
+          { "label": "Input", "nodes": ["CT surface volumes (65-layer / 33-layer)"] },
+          { "label": "Ink detection", "nodes": ["SegmentInkNet baseline", "U-Net V2", "TimeSformer target"] },
+          { "label": "Post-process", "nodes": ["Thresholding", "Morphology", "Connected components"] },
+          { "label": "Text reconstruction", "nodes": ["Greek template matching", "Letter candidates"] }
+        ],
+        "patterns": [
+          { "name": "Progressive model ladder", "detail": "Baseline CNN → U-Net V2 → TimeSformer lets architecture risk be staged against evidence." },
+          { "name": "Volumetric input modelling", "detail": "Multi-layer CT surface volumes are treated as a 3D signal, not flat images." },
+          { "name": "Classical post-processing", "detail": "Thresholding, morphology and connected components turn soft activations into discrete letters." },
+          { "name": "Caution around pseudo-labels", "detail": "Reproducible training and evaluation guard against overfitting noisy labels." }
+        ],
+        "scalability": [
+          "Fragment and segment-track stages process huge CT volumes in tiles rather than whole scans.",
+          "The model ladder lets compute scale with ambition, from baseline to TimeSformer.",
+          "Reproducible training/eval makes results comparable as data and models grow."
+        ],
+        "metrics": [
+          { "value": "65", "label": "CT layers modelled" },
+          { "value": "3", "label": "model architectures" }
+        ]
+      }
     },
     {
       "slug": "femh-voice-disorder",
@@ -207,7 +479,39 @@
       ],
       "tech": ["PyTorch", "Audio ML", "MFCC", "Mel Spectrograms", "Multimodal Classification"],
       "liveLink": null,
-      "githubLink": null
+      "githubLink": null,
+      "highlights": [
+        "Honest, reproducible medical-ML experimentation — results reported as they are.",
+        "Multimodal fusion of audio features with clinical metadata, not voice alone.",
+        "Careful regularisation recipe (mixup, cosine restarts) for a small, imbalanced dataset.",
+        "Verified on 1,121 samples across six disorder classes."
+      ],
+      "architecture": {
+        "caption": "A multimodal classifier that fuses audio representations (mel-spectrogram, MFCC) with clinical and metadata branches, trained with a careful regularisation recipe across six disorder classes.",
+        "tiers": [
+          { "label": "Inputs", "nodes": ["Voice audio", "Clinical metadata"] },
+          { "label": "Feature branches", "nodes": ["Mel-spectrogram", "MFCC", "Clinical", "Metadata"] },
+          { "label": "Fusion", "nodes": ["Multimodal fusion network"] },
+          { "label": "Training", "nodes": ["AdamW", "Cosine restarts", "Mixup", "Grad accumulation"] },
+          { "label": "Output", "nodes": ["6 disorder classes"] }
+        ],
+        "patterns": [
+          { "name": "Multimodal feature fusion", "detail": "Separate audio and clinical branches combine, rather than treating voice as a lone waveform." },
+          { "name": "Regularisation recipe", "detail": "Mixup, differential weight decay and cosine restarts combat overfitting on a small dataset." },
+          { "name": "Gradient accumulation", "detail": "Effective batch size is raised without exceeding memory limits." },
+          { "name": "Honest class-level evaluation", "detail": "Per-class accuracy is reported (50.0% val / 43.79% test) rather than a single headline number." }
+        ],
+        "scalability": [
+          "Branch-based design lets new modalities attach without redesigning the model.",
+          "Gradient accumulation scales effective batch size on limited hardware.",
+          "The fusion approach generalises to other multimodal medical-audio tasks."
+        ],
+        "metrics": [
+          { "value": "1,121", "label": "samples" },
+          { "value": "6", "label": "disorder classes" },
+          { "value": "43.79%", "label": "test accuracy" }
+        ]
+      }
     }
   ]
 }
