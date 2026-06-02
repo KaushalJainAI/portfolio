@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         <div className="media-frame media-tall">
-          <img src={assetLinks.profile.avatar} alt="Portrait of Kaushal Jain" className="feature-media" fetchPriority="high" />
+          <img src={assetLinks.profile.homeHero} alt="Portrait of Kaushal Jain" className="feature-media" fetchPriority="high" />
         </div>
       </section>
 

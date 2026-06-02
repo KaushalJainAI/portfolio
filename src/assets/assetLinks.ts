@@ -13,8 +13,9 @@ export const assetLinks = {
 
   // General Assets
   profile: {
-    // Real photo (kept)
+    // Real photos (kept)
     avatar: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1776057328/portfolio/profile.jpg",
+    homeHero: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1780384213/portfolio/home_hero_portrait.jpg",
     // SVG illustrations (replacements)
     heroWorkspace: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779817983/portfolio/svg/dev-workspace.svg",
     teamCollab: "https://res.cloudinary.com/dxhf4srxx/image/upload/v1779818022/portfolio/svg/team-collab.svg",
