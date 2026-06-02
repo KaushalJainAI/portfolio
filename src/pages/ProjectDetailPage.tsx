@@ -7,6 +7,21 @@ import { usePageMeta } from '../usePageMeta';
 import ArchitectureDiagram from '../components/ArchitectureDiagram';
 import ProjectStats from '../components/ProjectStats';
 import { Check } from 'lucide-react';
+import type { CaseStudyItem } from '../data/projects';
+
+const CaseStudyList: React.FC<{ items: CaseStudyItem[]; numbered?: boolean }> = ({ items, numbered = false }) => (
+  <div className={numbered ? 'case-flow-list' : 'case-card-grid'}>
+    {items.map((item, index) => (
+      <article className={numbered ? 'case-flow-item' : 'case-card'} key={`${item.title}-${index}`}>
+        {numbered ? <span className="case-step">{String(index + 1).padStart(2, '0')}</span> : null}
+        <div>
+          <h3>{item.title}</h3>
+          <p>{item.detail}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+);
 
 const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -20,6 +35,8 @@ const ProjectDetailPage: React.FC = () => {
   if (!project) {
     return <Navigate to={ROUTES.projects} replace />;
   }
+
+  const caseStudy = project.caseStudy;
 
   return (
     <main className="container page">
@@ -67,6 +84,39 @@ const ProjectDetailPage: React.FC = () => {
         </section>
       ) : null}
 
+      {caseStudy ? (
+        <section className="section">
+          <div className="case-overview">
+            <article className="case-overview-main">
+              <p className="mini">Project abstract</p>
+              <p>{caseStudy.abstract}</p>
+            </article>
+            <article>
+              <p className="mini">Motivation</p>
+              <p>{caseStudy.motivation}</p>
+            </article>
+            <article>
+              <p className="mini">Problem statement</p>
+              <p>{caseStudy.problemStatement}</p>
+            </article>
+          </div>
+        </section>
+      ) : null}
+
+      {caseStudy ? (
+        <section className="section">
+          <div className="section-head">
+            <span className="section-bullet" aria-hidden="true"></span>
+            <h2>System goals</h2>
+          </div>
+          <ul className="goal-grid">
+            {caseStudy.systemGoals.map(goal => (
+              <li key={goal}>{goal}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <section className="section">
         <div className="case-study-grid">
           <div>
@@ -87,6 +137,28 @@ const ProjectDetailPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {caseStudy ? (
+        <section className="section">
+          <div className="section-head">
+            <span className="section-bullet" aria-hidden="true"></span>
+            <h2>Architecture views</h2>
+          </div>
+          <div className="architecture-view-grid">
+            {caseStudy.architectureViews.map(view => (
+              <article className="architecture-view" key={view.name}>
+                <p className="mini">{view.name}</p>
+                <p>{view.purpose}</p>
+                <div className="chips compact">
+                  {view.components.map((component, index) => (
+                    <span className={`chip c${(index % 3) + 1}`} key={component}>{component}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="section">
         <div className="section-head">
@@ -111,11 +183,54 @@ const ProjectDetailPage: React.FC = () => {
         <section className="section">
           <div className="section-head">
             <span className="section-bullet" aria-hidden="true"></span>
-            <h2>Core architecture</h2>
+            <h2>High-level and low-level design</h2>
           </div>
           <ArchitectureDiagram architecture={project.architecture} />
         </section>
       )}
+
+      {caseStudy ? (
+        <>
+          <section className="section">
+            <div className="section-head">
+              <span className="section-bullet" aria-hidden="true"></span>
+              <h2>Key workflows</h2>
+            </div>
+            <CaseStudyList items={caseStudy.keyWorkflows} numbered />
+          </section>
+
+          <section className="section">
+            <div className="section-head">
+              <span className="section-bullet" aria-hidden="true"></span>
+              <h2>Low-level design details</h2>
+            </div>
+            <CaseStudyList items={caseStudy.lowLevelDesign} />
+          </section>
+
+          <section className="section">
+            <div className="section-head">
+              <span className="section-bullet" aria-hidden="true"></span>
+              <h2>Security and reliability</h2>
+            </div>
+            <CaseStudyList items={caseStudy.securityAndReliability} />
+          </section>
+
+          <section className="section">
+            <div className="section-head">
+              <span className="section-bullet" aria-hidden="true"></span>
+              <h2>Tradeoffs</h2>
+            </div>
+            <CaseStudyList items={caseStudy.tradeoffs} />
+          </section>
+
+          <section className="section">
+            <div className="recruiter-takeaway">
+              <p className="mini">Recruiter takeaway</p>
+              <p>{caseStudy.recruiterTakeaway}</p>
+            </div>
+          </section>
+        </>
+      ) : null}
 
       <section className="section">
         <div className="section-head">

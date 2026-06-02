@@ -1190,6 +1190,127 @@ h2 {
   line-height: 1.65;
 }
 
+.case-overview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.case-overview > article,
+.architecture-view,
+.case-card,
+.case-flow-item,
+.recruiter-takeaway {
+  min-width: 0;
+  padding: var(--space-5);
+  border: 1px solid rgba(31, 26, 23, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 253, 249, 0.72);
+  box-shadow: var(--shadow-sm);
+}
+
+.case-overview-main {
+  grid-column: span 2;
+}
+
+.case-overview p:last-child,
+.architecture-view p:not(.mini),
+.case-card p,
+.case-flow-item p,
+.recruiter-takeaway p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.case-overview-main p:last-child {
+  max-width: 72ch;
+  color: var(--text);
+  font-size: 1.08rem;
+}
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.goal-grid li {
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid rgba(23, 107, 99, 0.14);
+  border-radius: var(--radius-sm);
+  background: rgba(23, 107, 99, 0.06);
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.architecture-view-grid,
+.case-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.architecture-view .chips,
+.chips.compact {
+  margin-top: var(--space-4);
+}
+
+.case-card h3,
+.case-flow-item h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.case-flow-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.case-flow-item {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.case-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(23, 107, 99, 0.16);
+  background: rgba(23, 107, 99, 0.08);
+  color: var(--accent-strong);
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.recruiter-takeaway {
+  border-color: rgba(23, 107, 99, 0.18);
+  background:
+    linear-gradient(135deg, rgba(23, 107, 99, 0.08), transparent 62%),
+    rgba(255, 253, 249, 0.86);
+}
+
+.recruiter-takeaway p:last-child {
+  max-width: 74ch;
+  color: var(--text);
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
 .chip {
   display: inline-flex;
   align-items: center;
@@ -1491,6 +1612,17 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .case-overview,
+  .architecture-view-grid,
+  .case-card-grid,
+  .goal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-overview-main {
+    grid-column: auto;
+  }
+
   .project-collage {
     grid-template-columns: 1fr;
   }
@@ -1645,6 +1777,19 @@ footer {
 
   .case-study-grid > div {
     padding: var(--space-4);
+  }
+
+  .case-overview > article,
+  .architecture-view,
+  .case-card,
+  .case-flow-item,
+  .recruiter-takeaway {
+    padding: var(--space-4);
+  }
+
+  .case-flow-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
   }
 
   .project-links {
