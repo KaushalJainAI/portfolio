@@ -15,7 +15,7 @@
         "Admin command center, Redis caching, S3 media storage, Docker, nginx, and EC2 deployment."
       ],
       "tech": ["Django REST", "React", "TypeScript", "Redis", "PostgreSQL", "Docker", "EC2", "S3"],
-      "liveLink": "https://nidhimasala.kaushaljain.com",
+      "liveLink": "https://nidhimasala.com",
       "githubLink": "https://github.com/KaushalJainAI/nidhi-brand-forge",
       "codeLinks": [
         { "label": "Frontend", "url": "https://github.com/KaushalJainAI/nidhi-brand-forge" },
